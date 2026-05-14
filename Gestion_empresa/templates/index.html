@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión Empresa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <span class="logo">Gestión Empresa</span>
+        <a href="/">Equipos</a>
+        <a href="/obrador">Obrador</a>
+        <a href="/produccion">Produccion</a>
+        <a href="/resumen">Resumen</a>
+
+
+    </nav>
+    <div class="contenido">
+        <h1>Equipos de la oficina</h1>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>IP</th>
+                <th>Ubicacion</th>
+                <th>Estado</th>
+            </tr>
+            {% for equipo in equipos %}
+            <tr>
+                <td>{{ equipo.nombre_equipo }}</td>
+                <td>{{ equipo.tipo }}</td>
+                <td>{{ equipo.ip }}</td>
+                <td>{{ equipo.ubicacion }}</td>
+                <td>{{ equipo.estado }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
