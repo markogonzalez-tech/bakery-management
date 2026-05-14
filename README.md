@@ -50,3 +50,4 @@ python app.py
 ## Author
 
 Built as part of an internship project — 2026
+Marko.
