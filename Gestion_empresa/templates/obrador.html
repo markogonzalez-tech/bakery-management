@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión Obrador</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <span class="logo">Gestión Empresa</span>
+        <a href="/">Equipos</a>
+        <a href="/obrador">Obrador</a>
+        <a href="/produccion">Produccion</a>
+        <a href="/resumen">Resumen</a>
+
+
+    </nav>
+    <div class="contenido">
+        <h1>Gestión Obrador</h1>
+
+        <h2>Productos</h2>
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Categoria</th>
+            </tr>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.categoria }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Tiendas</h2>
+        <table>
+            <tr>
+                <th>Tienda</th>
+                <th>Ciudad</th>
+            </tr>
+            {% for tienda in tiendas %}
+            <tr>
+                <td>{{ tienda.nombre }}</td>
+                <td>{{ tienda.ciudad }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
