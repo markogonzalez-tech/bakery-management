@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resumen de Ventas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .vendido  { color: #27ae60; font-weight: bold; }
+        .negativo { color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">🏭 Gestión Empresa</span>
+        <a href="/">Equipos</a>
+        <a href="/obrador">Obrador</a>
+        <a href="/produccion">Produccion</a>
+        <a href="/resumen">Resumen</a>
+    </nav>
+    <div class="contenido">
+        <h1>Resumen de Ventas</h1>
+
+        {% if datos %}
+        <table>
+            <tr>
+                <th>Fecha</th>
+                <th>Tienda</th>
+                <th>Categoria</th>
+                <th>Producto</th>
+                <th>Recibido</th>
+                <th>Devuelto</th>
+                <th>Merma</th>
+                <th>Vendido</th>
+            </tr>
+            {% for d in datos %}
+            <tr>
+                <td>{{ d.fecha }}</td>
+                <td>{{ d.tienda }}</td>
+                <td>{{ d.categoria }}</td>
+                <td>{{ d.producto }}</td>
+                <td>{{ d.recibido }}</td>
+                <td>{{ d.devuelto }}</td>
+                <td>{{ d.merma }}</td>
+                <td class="{{ 'negativo' if d.vendido < 0 else 'vendido' }}">
+                    {{ d.vendido }}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No hay datos todavia. Mete datos en la pagina de Produccion.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
