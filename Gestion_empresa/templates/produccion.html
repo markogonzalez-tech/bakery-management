@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Produccion Diaria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .cabecera-form {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .cabecera-form label {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .cabecera-form select,
+        .cabecera-form input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .categoria-header td {
+            background-color: #e8ecf0;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px 16px;
+        }
+        input[type="number"] {
+            width: 80px;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .btn-guardar {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-guardar:hover {
+            background-color: #3d5166;
+        }
+        .nota {
+            background: #fff8e1;
+            border-left: 4px solid #f0a500;
+            padding: 10px 16px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">Gestión Empresa</span>
+        <a href="/">Equipos</a>
+        <a href="/obrador">Obrador</a>
+        <a href="/produccion">Produccion</a>
+        <a href="/resumen">Resumen</a>
+
+    </nav>
+    <div class="contenido">
+        <h1>Hoja de Produccion Diaria</h1>
+
+        <!-- NOTA PARA TENER EN CUENTA -->
+        <div class="nota">
+            DUDA: La columna PEDIDOS, ¿la rellena el obrador antes de enviar 
+            o la tienda cuando hace el pedido? Confirmar con el jefe para saber 
+            quién rellena esa columna y cuándo (A poder ser esta semana).
+        </div>
+
+        <form method="POST" action="/guardar_produccion">
+            <div class="cabecera-form">
+                <div>
+                    <label>Tienda:</label>
+                    <select name="id_tienda" required>
+                        {% for tienda in tiendas %}
+                        <option value="{{ tienda.id }}">{{ tienda.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label>Fecha:</label>
+                    <input type="date" name="fecha" required 
+                           value="{{ now }}">
+                </div>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Producto</th>
+                    <th>Pedidos tienda</th>
+                    <th>Recepcion tienda</th>
+                    <th>Devolver al obrador</th>
+                    <th>Tirado (merma)</th>
+                </tr>
+
+                {% set cat_actual = namespace(nombre="") %}
+                {% for producto in productos %}
+
+                    {% if producto.categoria != cat_actual.nombre %}
+                        {% set cat_actual.nombre = producto.categoria %}
+                        <tr class="categoria-header">
+                            <td colspan="5">{{ producto.categoria | upper }}</td>
+                        </tr>
+                    {% endif %}
+
+                    <tr>
+                        <td>{{ producto.nombre }}</td>
+                        <td><input type="number" name="pedidos_{{ producto.id }}" min="0" value="0"></td>
+                        <td><input type="number" name="recepcion_{{ producto.id }}" min="0" value="0"></td>
+                        <td><input type="number" name="devolucion_{{ producto.id }}" min="0" value="0"></td>
+                        <td><input type="number" name="merma_{{ producto.id }}" min="0" value="0"></td>
+                    </tr>
+
+                {% endfor %}
+            </table>
+
+            <button type="submit" class="btn-guardar">💾 Guardar produccion</button>
+        </form>
+    </div>
+</body>
+</html> 
