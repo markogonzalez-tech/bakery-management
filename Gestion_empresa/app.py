@@ -1,23 +1,28 @@
 from flask import Flask, render_template, request, redirect
 from datetime import date
 import mysql.connector
+import gspread
+from google.oauth2.service_account import Credentials as GCredentials
 
 app = Flask(__name__)
 
+# Conexion a Railway (base de datos en la nube)
 def conectar_inventario():
     return mysql.connector.connect(
-        host="localhost",
+        host="yamabiko.proxy.rlwy.net",
+        port=19676,
         user="root",
-        password="1234",
-        database="inventario_empresa"
+        password="VHMdNTYrVHfxzWuWaVoOMuDjFIDJWZNg",
+        database="railway"
     )
 
 def conectar_obrador():
     return mysql.connector.connect(
-        host="localhost",
+        host="yamabiko.proxy.rlwy.net",
+        port=19676,
         user="root",
-        password="1234",
-        database="gestion_obrador"
+        password="VHMdNTYrVHfxzWuWaVoOMuDjFIDJWZNg",
+        database="railway"
     )
 
 @app.route("/")
@@ -95,19 +100,6 @@ def guardar_produccion():
     conn.commit()
     conn.close()
     return redirect("/produccion")
-# Cuando le das a "Guardar producción" en la web:
-
-# Coge la tienda y la fecha que elegiste arriba
-# Recorre todos los productos uno por uno
-# Por cada producto mira los números que pusiste:
-
-# Si pusiste algo en Recepción → lo guarda en la tabla recepciones
-# Si pusiste algo en Devolución → lo guarda en la tabla devoluciones
-# Si pusiste algo en Merma → lo guarda en la tabla mermas
-
-
-# Si un número es 0 no guarda nada — para no llenar la base de datos de ceros
-# Cuando termina te manda de vuelta a la página de producción
 
 @app.route("/resumen")
 def resumen():
@@ -141,16 +133,6 @@ def resumen():
     conn.close()
     return render_template("resumen.html", datos=datos)
 
-# Va a la base de datos y une todas las tablas para mostrarte en una sola tabla:
-
-# De recepciones → lo que llegó a cada tienda
-# De devoluciones → lo que volvió al obrador
-# De mermas → lo que se tiró
-# Y calcula solo vendido = recibido - devuelto
-
-import gspread
-from google.oauth2.service_account import Credentials as GCredentials
-
 @app.route("/fotos")
 def fotos():
     SCOPES = [
@@ -159,24 +141,14 @@ def fotos():
     ]
     creds = GCredentials.from_service_account_file("credentials.json", scopes=SCOPES)
     client = gspread.authorize(creds)
-    
     SHEET_ID = "12FqSkFwZoRxGRqz9--lTWQvwnp0j72us4d8zyyuuIXQ"
     sheet = client.open_by_key(SHEET_ID).sheet1
     respuestas = sheet.get_all_records()
-    
     return render_template("fotos.html", respuestas=respuestas)
-
 
 @app.route("/ayuda")
 def ayuda():
     return render_template("ayuda.html")
-
-# Esta página nueva Fotos hace esto:
-
-# Se conecta al Google Sheets automáticamente
-# Coge todas las respuestas del formulario que mandaron los trabajadores
-# Las muestra en una tabla con fecha, tienda y un botón Ver foto que abre la foto de Drive
-
 
 if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port=5000)
