@@ -2,11 +2,12 @@ from flask import Flask, render_template, request, redirect
 from datetime import date
 import mysql.connector
 import gspread
+import os
+import json
 from google.oauth2.service_account import Credentials as GCredentials
 
 app = Flask(__name__)
 
-# Conexion a Railway (base de datos en la nube)
 def conectar_inventario():
     return mysql.connector.connect(
         host="yamabiko.proxy.rlwy.net",
@@ -139,7 +140,8 @@ def fotos():
         "https://www.googleapis.com/auth/spreadsheets",
         "https://www.googleapis.com/auth/drive"
     ]
-    creds = GCredentials.from_service_account_file("credentials.json", scopes=SCOPES)
+    creds_json = json.loads(os.environ.get("GOOGLE_CREDENTIALS", "{}"))
+    creds = GCredentials.from_service_account_info(creds_json, scopes=SCOPES)
     client = gspread.authorize(creds)
     SHEET_ID = "12FqSkFwZoRxGRqz9--lTWQvwnp0j72us4d8zyyuuIXQ"
     sheet = client.open_by_key(SHEET_ID).sheet1
