@@ -1,14 +1,15 @@
 # Bakery Management System
 
-A web-based internal management system for a bakery business, 
-built during an internship. Manages IT inventory, daily production, 
-store distribution and sales tracking.
+Internal web management system for a bakery business, built during an internship.
+Handles IT inventory, daily production tracking, store distribution and sales.
 
 ## Tech Stack
 
-- Python + Flask
-- MySQL
+- Python 3 + Flask
+- MySQL (Railway - cloud hosted)
+- Google Forms + Google Sheets API
 - HTML + CSS
+- Deployed on Render
 
 ## Features
 
@@ -16,38 +17,7 @@ store distribution and sales tracking.
 - Daily production form per store
 - Reception, returns and waste tracking
 - Automatic sales calculation (received - returned = sold)
+- Google Form integration for production sheet photos
+- User manual page for all staff
 
-## Project Structure
-
-gestion_empresa/
-├── app.py
-├── templates/
-│   ├── index.html
-│   ├── obrador.html
-│   ├── produccion.html
-│   └── resumen.html
-└── static/
-    └── style.css
-
-## Database
-
-Two databases:
-- inventario_empresa — IT equipment and incidents
-- gestion_obrador — products, stores, production cycle
-
-## Setup
-
-1. Install dependencies
-pip install flask mysql-connector-python
-
-2. Configure your MySQL connection in app.py
-
-3. Run the app
-python app.py
-
-4. Open your browser at http://127.0.0.1:5000
-
-## Author
-
-Built as part of an internship project — 2026
-Marko.
+## Business Flow
