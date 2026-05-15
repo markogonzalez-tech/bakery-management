@@ -148,6 +148,35 @@ def resumen():
 # De mermas → lo que se tiró
 # Y calcula solo vendido = recibido - devuelto
 
+import gspread
+from google.oauth2.service_account import Credentials as GCredentials
+
+@app.route("/fotos")
+def fotos():
+    SCOPES = [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive"
+    ]
+    creds = GCredentials.from_service_account_file("credentials.json", scopes=SCOPES)
+    client = gspread.authorize(creds)
+    
+    SHEET_ID = "12FqSkFwZoRxGRqz9--lTWQvwnp0j72us4d8zyyuuIXQ"
+    sheet = client.open_by_key(SHEET_ID).sheet1
+    respuestas = sheet.get_all_records()
+    
+    return render_template("fotos.html", respuestas=respuestas)
+
+
+@app.route("/ayuda")
+def ayuda():
+    return render_template("ayuda.html")
+
+# Esta página nueva Fotos hace esto:
+
+# Se conecta al Google Sheets automáticamente
+# Coge todas las respuestas del formulario que mandaron los trabajadores
+# Las muestra en una tabla con fecha, tienda y un botón Ver foto que abre la foto de Drive
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False, host="0.0.0.0", port=5000)
