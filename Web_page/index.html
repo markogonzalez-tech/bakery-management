@@ -1,0 +1,2379 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1C0F05">
+    <title>Irun Larreaundi — Obrador Artesanal de Pan y Bollería en Irun</title>
+    <meta name="description"
+        content="Obrador artesanal en Irun, Gipuzkoa. Pan, bollería y pastelería elaborados cada mañana con recetas de siempre. Reparto diario en Irun y Oiartzun.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://irunlarreaundi.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Irun Larreaundi — Obrador Artesanal">
+    <meta property="og:description" content="Pan y bollería artesanal elaborados cada día en Irun.">
+    <meta property="og:url" content="https://irunlarreaundi.com/">
+    <meta property="og:image" content="https://irunlarreaundi.com/assets/img/hero.jpg">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Irun Larreaundi","url":"https://irunlarreaundi.com/","telephone":"+34943005491","email":"info@irunlarreaundi.com","priceRange":"€","address":{"@type":"PostalAddress","streetAddress":"Larreaundi","addressLocality":"Irun","addressRegion":"Gipuzkoa","postalCode":"20305","addressCountry":"ES"},"sameAs":["https://www.instagram.com/irunlarreaundi"]}</script>
+    <script>function googleTranslateInit() { new google.translate.TranslateElement({ pageLanguage: 'es', includedLanguages: 'en,fr,de,it,pt,eu,ca,zh,ja,ar,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element'); }</script>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --ink: #1C0F05;
+            --bark: #2A1608;
+            --bark2: #3D2010;
+            --clay: #6B3A1F;
+            --amber: #C8853A;
+            --gold: #E0A84A;
+            --gold-soft: #F0CC80;
+            --cream: #FAF3E8;
+            --paper: #F5EDD8;
+            --linen: #EAE0CC;
+            --linen2: #DDD0B8;
+            --muted: #7A5E40;
+            --wh: #FFFCF5
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        a {
+            color: inherit
+        }
+
+        .sr {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1)
+        }
+
+        .sr.on {
+            opacity: 1;
+            transform: none
+        }
+
+        .sr-l {
+            opacity: 0;
+            transform: translateX(-28px);
+            transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1)
+        }
+
+        .sr-l.on {
+            opacity: 1;
+            transform: none
+        }
+
+        .sr-r {
+            opacity: 0;
+            transform: translateX(28px);
+            transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1)
+        }
+
+        .sr-r.on {
+            opacity: 1;
+            transform: none
+        }
+
+        /* TRANSLATE */
+        .nav-translate {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 100px;
+            padding: 6px 14px 6px 10px;
+            transition: background .2s;
+            cursor: pointer;
+            flex-shrink: 0
+        }
+
+        .nav-translate:hover {
+            background: rgba(255, 255, 255, .15)
+        }
+
+        .nav-translate-lbl {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .7);
+            white-space: nowrap;
+            user-select: none
+        }
+
+        #google_translate_element {
+            display: inline-block
+        }
+
+        .goog-te-gadget {
+            font-family: 'DM Sans', sans-serif !important;
+            font-size: 0 !important
+        }
+
+        .goog-te-gadget select {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            background: transparent;
+            color: rgba(255, 255, 255, .85);
+            border: 0;
+            padding: 2px;
+            cursor: pointer;
+            outline: none;
+            max-width: 90px
+        }
+
+        .goog-te-gadget select option {
+            background: #1C0F05;
+            color: #fff
+        }
+
+        .goog-logo-link,
+        .goog-te-gadget span {
+            display: none !important
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+            height: 68px;
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background .5s, box-shadow .5s
+        }
+
+        nav.scrolled {
+            background: rgba(28, 15, 5, .96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, .06)
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--wh);
+            text-decoration: none;
+            letter-spacing: .3px;
+            line-height: 1
+        }
+
+        .logo em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 300
+        }
+
+        .nav-r {
+            display: flex;
+            align-items: center;
+            gap: 24px
+        }
+
+        .nav-r a {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .6);
+            text-decoration: none;
+            transition: color .2s;
+            white-space: nowrap
+        }
+
+        .nav-r a:hover {
+            color: var(--gold-soft)
+        }
+
+        .nav-pill {
+            background: var(--amber) !important;
+            color: var(--bark) !important;
+            padding: 9px 20px;
+            border-radius: 100px;
+            font-weight: 500 !important;
+            letter-spacing: 1.5px !important;
+            transition: background .2s, transform .2s !important
+        }
+
+        .nav-pill:hover {
+            background: var(--gold) !important;
+            transform: scale(1.04) !important
+        }
+
+        .nav-burger {
+            display: none;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            padding: 6px;
+            flex-direction: column;
+            gap: 5px
+        }
+
+        .nav-burger span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: rgba(255, 255, 255, .8);
+            border-radius: 2px;
+            transition: all .3s
+        }
+
+        .nav-burger.open span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg)
+        }
+
+        .nav-burger.open span:nth-child(2) {
+            opacity: 0
+        }
+
+        .nav-burger.open span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg)
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background: var(--bark);
+            display: flex;
+            align-items: center;
+            overflow: hidden
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat;
+            transform: scale(1.05);
+            transition: transform 8s ease;
+            will-change: transform
+        }
+
+        .hero.loaded .hero-bg {
+            transform: scale(1)
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, rgba(28, 15, 5, .92) 0%, rgba(28, 15, 5, .78) 40%, rgba(28, 15, 5, .3) 75%, rgba(28, 15, 5, .15) 100%)
+        }
+
+        .hero-overlay2 {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(28, 15, 5, .4) 0%, transparent 30%, transparent 70%, rgba(28, 15, 5, .6) 100%)
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 140px 48px 80px;
+            max-width: 720px
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 32px;
+            animation: fadeIn .8s ease both
+        }
+
+        .hero-eyebrow-line {
+            height: 1px;
+            width: 0;
+            background: var(--amber);
+            animation: lineGrow .9s ease .3s both
+        }
+
+        .hero-eyebrow span {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--amber);
+            white-space: nowrap
+        }
+
+        .hero-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(52px, 7vw, 96px);
+            line-height: 1.02;
+            color: var(--wh);
+            font-weight: 600;
+            margin-bottom: 28px;
+            animation: fadeUp .9s ease .15s both
+        }
+
+        .hero-content h1 em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 300;
+            display: block
+        }
+
+        .hero-desc {
+            font-size: clamp(15px, 1.8vw, 18px);
+            font-weight: 300;
+            color: rgba(255, 255, 255, .65);
+            line-height: 1.85;
+            max-width: 480px;
+            margin-bottom: 44px;
+            animation: fadeUp .9s ease .3s both
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            animation: fadeUp .9s ease .45s both
+        }
+
+        .btn-amber {
+            background: var(--amber);
+            color: var(--bark);
+            padding: 14px 30px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            border: 0;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background .2s, transform .2s, box-shadow .2s;
+            display: inline-block
+        }
+
+        .btn-amber:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(200, 133, 58, .3)
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, .3);
+            color: rgba(255, 255, 255, .8);
+            padding: 14px 30px;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all .2s;
+            display: inline-block
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold-soft);
+            color: var(--gold-soft)
+        }
+
+        .btn-dark {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15);
+            color: rgba(255, 255, 255, .75);
+            padding: 14px 30px;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all .2s;
+            display: inline-block;
+            backdrop-filter: blur(8px)
+        }
+
+        .btn-dark:hover {
+            background: rgba(255, 255, 255, .14);
+            border-color: rgba(255, 255, 255, .3);
+            color: var(--wh)
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: 48px;
+            right: 48px;
+            z-index: 2;
+            display: flex;
+            gap: 2px;
+            animation: fadeIn 1s ease .7s both
+        }
+
+        .hstat {
+            background: rgba(28, 15, 5, .7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, .1);
+            padding: 20px 24px;
+            text-align: center;
+            min-width: 100px
+        }
+
+        .hstat-n {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            color: var(--gold);
+            font-weight: 600;
+            display: block;
+            line-height: 1
+        }
+
+        .hstat-l {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .4);
+            margin-top: 5px;
+            display: block
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 28px;
+            left: 48px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: fadeIn 1s ease 1s both
+        }
+
+        .scroll-indicator span {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .3)
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, rgba(200, 133, 58, .6), transparent);
+            animation: scrollPulse 2s ease infinite
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                opacity: .4;
+                transform: scaleY(.8)
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1)
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        @keyframes lineGrow {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 36px
+            }
+        }
+
+        /* MARQUEE */
+        .marquee-wrap {
+            background: var(--amber);
+            overflow: hidden;
+            padding: 14px 0;
+            border-top: 1px solid rgba(255, 255, 255, .15)
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee 24s linear infinite;
+            width: max-content
+        }
+
+        .marquee-item {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--bark);
+            padding: 0 36px;
+            white-space: nowrap;
+            opacity: .9
+        }
+
+        .marquee-item::before {
+            content: '✦';
+            margin-right: 36px;
+            opacity: .5
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* SECTION */
+        .section {
+            padding: 100px 48px
+        }
+
+        .section-inner {
+            max-width: 1160px;
+            margin: 0 auto
+        }
+
+        .section-header {
+            margin-bottom: 64px
+        }
+
+        .sh-tag {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--amber);
+            display: block;
+            margin-bottom: 14px
+        }
+
+        .section-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(38px, 4.5vw, 64px);
+            color: var(--bark);
+            font-weight: 700;
+            line-height: 1.06;
+            margin-bottom: 16px
+        }
+
+        .section-header h2 em {
+            color: var(--amber);
+            font-style: italic;
+            font-weight: 300
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--muted);
+            font-weight: 300;
+            max-width: 460px;
+            line-height: 1.85
+        }
+
+        /* PRODUCTOS */
+        .productos-bg {
+            background: var(--cream)
+        }
+
+        .pgrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--linen2)
+        }
+
+        .pc {
+            background: var(--cream);
+            padding: 44px 36px;
+            position: relative;
+            overflow: hidden;
+            transition: background .3s
+        }
+
+        .pc:hover {
+            background: var(--wh)
+        }
+
+        .pc-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--amber), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .5s cubic-bezier(.16, 1, .3, 1)
+        }
+
+        .pc:hover .pc-accent {
+            transform: scaleX(1)
+        }
+
+        .pc-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 88px;
+            color: var(--linen2);
+            font-weight: 700;
+            line-height: .85;
+            margin-bottom: 22px;
+            user-select: none;
+            transition: color .4s
+        }
+
+        .pc:hover .pc-num {
+            color: rgba(200, 133, 58, .1)
+        }
+
+        .pc-ico {
+            font-size: 36px;
+            margin-bottom: 14px;
+            display: block
+        }
+
+        .pc h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--bark);
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.2
+        }
+
+        .pc p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.85;
+            font-weight: 300
+        }
+
+        .pc-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--clay);
+            font-weight: 500
+        }
+
+        .pc-label::before {
+            content: '';
+            display: block;
+            width: 18px;
+            height: 1px;
+            background: var(--amber)
+        }
+
+        /* QUIÉNES */
+        .quienes-bg {
+            background: var(--bark);
+            position: relative;
+            overflow: hidden
+        }
+
+        .quienes-deco {
+            position: absolute;
+            right: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(140px, 18vw, 260px);
+            font-weight: 700;
+            color: rgba(255, 255, 255, .025);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap
+        }
+
+        .quienes-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1
+        }
+
+        .quienes-text .sh-tag {
+            color: var(--amber)
+        }
+
+        .quienes-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 4vw, 58px);
+            color: var(--wh);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 28px
+        }
+
+        .quienes-text p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, .5);
+            font-weight: 300;
+            line-height: 1.95;
+            margin-bottom: 16px
+        }
+
+        .quienes-text p strong {
+            color: rgba(255, 255, 255, .85);
+            font-weight: 400
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: rgba(255, 255, 255, .06)
+        }
+
+        .stat {
+            background: var(--bark);
+            padding: 40px 28px;
+            text-align: center;
+            transition: background .25s
+        }
+
+        .stat:hover {
+            background: var(--bark2)
+        }
+
+        .stat-n {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            color: var(--gold);
+            font-weight: 700;
+            display: block;
+            line-height: 1
+        }
+
+        .stat-l {
+            font-size: 10px;
+            color: rgba(255, 255, 255, .35);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            display: block;
+            line-height: 1.4
+        }
+
+        /* HAZTE CLIENTE */
+        .join-bg {
+            background: var(--paper);
+            position: relative;
+            overflow: hidden
+        }
+
+        .join-bg::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(200, 133, 58, .07), transparent 70%);
+            pointer-events: none
+        }
+
+        .join-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .join-wrap h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(34px, 4vw, 58px);
+            color: var(--bark);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 12px
+        }
+
+        .join-wrap h2 em {
+            color: var(--amber);
+            font-style: italic;
+            font-weight: 300
+        }
+
+        .join-wrap>p {
+            font-size: 16px;
+            color: var(--muted);
+            font-weight: 300;
+            max-width: 460px;
+            margin: 0 auto 44px;
+            line-height: 1.85
+        }
+
+        .form-card {
+            background: var(--wh);
+            border: 1px solid rgba(107, 58, 31, .1);
+            border-radius: 12px;
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(107, 58, 31, .08);
+            display: grid;
+            gap: 20px;
+            text-align: left
+        }
+
+        .field-label {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--clay);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 7px
+        }
+
+        .field-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid rgba(107, 58, 31, .14);
+            background: var(--cream);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            color: var(--ink);
+            border-radius: 6px;
+            transition: border-color .2s, box-shadow .2s, background .2s;
+            outline: none
+        }
+
+        .field-input:focus {
+            border-color: var(--amber);
+            box-shadow: 0 0 0 4px rgba(200, 133, 58, .08);
+            background: var(--wh)
+        }
+
+        .field-input::placeholder {
+            color: rgba(122, 94, 64, .4)
+        }
+
+        .check-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+            cursor: pointer
+        }
+
+        .check-row input {
+            margin-top: 3px;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            accent-color: var(--amber);
+            cursor: pointer
+        }
+
+        .check-row a {
+            color: var(--clay);
+            text-decoration: underline
+        }
+
+        .submit-btn {
+            justify-self: start;
+            background: var(--bark);
+            color: var(--gold-soft);
+            padding: 16px 38px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            border: 0;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all .25s;
+            margin-top: 4px
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            background: var(--amber);
+            color: var(--bark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(200, 133, 58, .25)
+        }
+
+        .submit-btn:disabled {
+            opacity: .55;
+            cursor: wait
+        }
+
+        .legal-txt {
+            font-size: 10px;
+            color: var(--muted);
+            line-height: 1.65;
+            opacity: .8
+        }
+
+        .legal-txt a {
+            color: var(--clay)
+        }
+
+        .form-feedback {
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+            margin-top: 4px;
+            line-height: 1.5
+        }
+
+        .form-feedback.ok {
+            display: block;
+            background: #E6F4D8;
+            color: #3A6419;
+            border: 1px solid #B5D98A;
+            font-weight: 500
+        }
+
+        .form-feedback.err {
+            display: block;
+            background: #F8E3DC;
+            color: #8B2E1A;
+            border: 1px solid #E0B5A8
+        }
+
+        /* TIENDAS */
+        .tiendas-bg {
+            background: var(--cream)
+        }
+
+        .tiendas-header {
+            text-align: center;
+            margin-bottom: 56px
+        }
+
+        .tiendas-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 4.5vw, 62px);
+            color: var(--bark);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 12px
+        }
+
+        .tiendas-header p {
+            font-size: 16px;
+            color: var(--muted);
+            font-weight: 300;
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.8
+        }
+
+        .shops-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px
+        }
+
+        .shop {
+            background: var(--wh);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(107, 58, 31, .08);
+            transition: transform .4s cubic-bezier(.16, 1, .3, 1), box-shadow .4s
+        }
+
+        .shop:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 60px rgba(107, 58, 31, .14)
+        }
+
+        .shop-img {
+            aspect-ratio: 4/3;
+            background: var(--linen);
+            overflow: hidden
+        }
+
+        .shop-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s ease
+        }
+
+        .shop:hover .shop-img img {
+            transform: scale(1.07)
+        }
+
+        .shop-body {
+            padding: 28px 28px 32px
+        }
+
+        .shop-body h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: var(--bark);
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.2
+        }
+
+        .shop-body p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 20px
+        }
+
+        .shop-link {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--clay);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--amber);
+            padding-bottom: 3px;
+            transition: color .2s, gap .2s
+        }
+
+        .shop-link:hover {
+            color: var(--amber);
+            gap: 12px
+        }
+
+        /* ENCUÉNTRANOS */
+        .enc-bg {
+            background: var(--paper)
+        }
+
+        .enc-inner {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto
+        }
+
+        .enc-inner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(34px, 4vw, 56px);
+            color: var(--bark);
+            font-weight: 700;
+            margin-bottom: 12px
+        }
+
+        .enc-inner>p {
+            font-size: 16px;
+            color: var(--muted);
+            font-weight: 300;
+            max-width: 400px;
+            margin: 0 auto 44px;
+            line-height: 1.85
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 40px
+        }
+
+        .ccard {
+            background: var(--wh);
+            border: 1px solid rgba(107, 58, 31, .1);
+            border-radius: 10px;
+            padding: 28px 22px;
+            text-align: left;
+            transition: all .25s
+        }
+
+        .ccard:hover {
+            border-color: var(--amber);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(107, 58, 31, .1)
+        }
+
+        .ccard-ico {
+            font-size: 24px;
+            margin-bottom: 12px
+        }
+
+        .ccard-lbl {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--amber);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px
+        }
+
+        .ccard-val {
+            font-size: 15px;
+            color: var(--bark);
+            font-weight: 500;
+            text-decoration: none;
+            line-height: 1.5;
+            display: block;
+            word-break: break-word
+        }
+
+        a.ccard-val:hover {
+            color: var(--clay)
+        }
+
+        .enc-chips {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 48px
+        }
+
+        .chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--wh);
+            border: 1px solid rgba(107, 58, 31, .12);
+            padding: 13px 24px;
+            font-size: 13px;
+            color: var(--bark);
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 400;
+            transition: all .2s
+        }
+
+        .chip:hover {
+            border-color: var(--clay);
+            box-shadow: 0 6px 20px rgba(107, 58, 31, .1);
+            transform: translateY(-2px)
+        }
+
+        .chip-i {
+            font-size: 17px
+        }
+
+        /* MAP con bloqueo de cookies */
+        .map-box {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(107, 58, 31, .1);
+            box-shadow: 0 8px 32px rgba(107, 58, 31, .08)
+        }
+
+        .map-box iframe {
+            display: block;
+            width: 100%;
+            height: 380px;
+            border: 0
+        }
+
+        .map-ph {
+            height: 380px;
+            background: var(--linen);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 12px;
+            border: 2px dashed var(--linen2)
+        }
+
+        .map-ph-inner {
+            padding: 32px
+        }
+
+        .map-ph-inner span {
+            font-size: 44px;
+            display: block;
+            margin-bottom: 16px
+        }
+
+        .map-ph-inner p {
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 320px;
+            margin: 0 auto 20px
+        }
+
+        .map-ph-btn {
+            background: var(--bark);
+            color: var(--gold-soft);
+            padding: 12px 24px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 0;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all .2s
+        }
+
+        .map-ph-btn:hover {
+            background: var(--amber);
+            color: var(--bark)
+        }
+
+        /* TRABAJA BANNER */
+        .trabaja-bg {
+            background: var(--bark);
+            padding: 72px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .trabaja-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(200, 133, 58, .12), transparent 70%);
+            pointer-events: none
+        }
+
+        .trabaja-bg h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(28px, 3.5vw, 46px);
+            color: var(--wh);
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1
+        }
+
+        .trabaja-bg p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, .5);
+            font-weight: 300;
+            max-width: 420px;
+            margin: 0 auto 28px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1
+        }
+
+        /* FOOTER */
+        footer {
+            background: #110900;
+            padding: 56px 48px 36px;
+            border-top: 1px solid rgba(255, 255, 255, .05)
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        .footer-brand .logo {
+            font-size: 24px;
+            display: inline-block;
+            margin-bottom: 12px
+        }
+
+        .footer-brand p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .35);
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 220px
+        }
+
+        .footer-col h4 {
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 16px;
+            font-weight: 500
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, .35);
+            text-decoration: none;
+            margin-bottom: 9px;
+            transition: color .2s;
+            font-weight: 300
+        }
+
+        .footer-col a:hover {
+            color: rgba(255, 255, 255, .7)
+        }
+
+        .social-row {
+            display: flex;
+            gap: 8px;
+            margin-top: 4px
+        }
+
+        .social-ico {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 50%;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all .2s
+        }
+
+        .social-ico:hover {
+            background: rgba(200, 133, 58, .2);
+            border-color: var(--amber);
+            transform: translateY(-2px)
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px
+        }
+
+        .footer-bottom p {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .2)
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center
+        }
+
+        .footer-legal a {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .25);
+            text-decoration: none;
+            transition: color .2s
+        }
+
+        .footer-legal a:hover {
+            color: rgba(255, 255, 255, .55)
+        }
+
+        .footer-ck-btn {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .4) !important;
+            cursor: pointer;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 100px;
+            padding: 4px 12px !important;
+            transition: all .2s !important;
+            font-family: inherit
+        }
+
+        .footer-ck-btn:hover {
+            border-color: var(--amber) !important;
+            color: var(--gold-soft) !important
+        }
+
+        /* COOKIES */
+        .ck-banner {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            max-width: 480px;
+            background: rgba(28, 15, 5, .97);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(224, 168, 74, .2);
+            border-radius: 12px;
+            padding: 24px 26px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, .5);
+            z-index: 1000;
+            display: none
+        }
+
+        .ck-banner.show {
+            display: block;
+            animation: ckin .4s ease both
+        }
+
+        @keyframes ckin {
+            from {
+                opacity: 0;
+                transform: translateY(16px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .ck-banner h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--gold);
+            margin-bottom: 8px
+        }
+
+        .ck-banner p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .6);
+            line-height: 1.65;
+            margin-bottom: 18px
+        }
+
+        .ck-banner p a {
+            color: var(--gold-soft);
+            text-decoration: underline
+        }
+
+        .ck-btns {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .ck-btns button {
+            padding: 10px 18px;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all .2s
+        }
+
+        .ck-accept {
+            background: var(--amber);
+            color: var(--bark)
+        }
+
+        .ck-accept:hover {
+            background: var(--gold)
+        }
+
+        .ck-reject {
+            background: transparent;
+            color: rgba(255, 255, 255, .6);
+            border: 1px solid rgba(255, 255, 255, .2) !important
+        }
+
+        .ck-reject:hover {
+            color: var(--wh)
+        }
+
+        .ck-custom-btn {
+            background: transparent;
+            color: var(--gold-soft);
+            text-decoration: underline;
+            font-size: 11px !important
+        }
+
+        .ck-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 8, 2, .75);
+            z-index: 1100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(6px)
+        }
+
+        .ck-modal.show {
+            display: flex
+        }
+
+        .ck-box {
+            background: var(--wh);
+            border-radius: 12px;
+            padding: 36px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto
+        }
+
+        .ck-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--bark);
+            margin-bottom: 8px
+        }
+
+        .ck-box>p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 24px
+        }
+
+        .ck-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            border-top: 1px solid rgba(107, 58, 31, .1)
+        }
+
+        .ck-row:last-of-type {
+            border-bottom: 1px solid rgba(107, 58, 31, .1);
+            margin-bottom: 24px
+        }
+
+        .ck-info strong {
+            display: block;
+            font-size: 14px;
+            color: var(--bark);
+            margin-bottom: 4px
+        }
+
+        .ck-info span {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.5
+        }
+
+        .ck-switch {
+            position: relative;
+            width: 44px;
+            height: 24px;
+            flex-shrink: 0
+        }
+
+        .ck-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0
+        }
+
+        .ck-slider {
+            position: absolute;
+            cursor: pointer;
+            inset: 0;
+            background: #D4C8B8;
+            border-radius: 24px;
+            transition: .25s
+        }
+
+        .ck-slider::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            left: 3px;
+            top: 3px;
+            background: #fff;
+            border-radius: 50%;
+            transition: .25s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .2)
+        }
+
+        .ck-switch input:checked+.ck-slider {
+            background: var(--amber)
+        }
+
+        .ck-switch input:checked+.ck-slider::before {
+            transform: translateX(20px)
+        }
+
+        .ck-switch input:disabled+.ck-slider {
+            background: var(--clay);
+            cursor: not-allowed;
+            opacity: .5
+        }
+
+        .ck-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            flex-wrap: wrap
+        }
+
+        .ck-actions button {
+            padding: 11px 22px;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: 0;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all .2s
+        }
+
+        .ck-save {
+            background: var(--bark);
+            color: var(--gold-soft)
+        }
+
+        .ck-save:hover {
+            background: var(--amber);
+            color: var(--bark)
+        }
+
+        .ck-all {
+            background: var(--amber);
+            color: var(--bark)
+        }
+
+        .ck-all:hover {
+            background: var(--gold)
+        }
+
+        /* FLOATING */
+        .fab-wa {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 800;
+            width: 54px;
+            height: 54px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, .4);
+            text-decoration: none;
+            transition: all .25s
+        }
+
+        .fab-wa:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 28px rgba(37, 211, 102, .55)
+        }
+
+        .fab-top {
+            position: fixed;
+            bottom: 90px;
+            right: 26px;
+            z-index: 800;
+            width: 40px;
+            height: 40px;
+            background: rgba(28, 15, 5, .85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            color: rgba(255, 255, 255, .7);
+            transition: all .25s;
+            border: 0
+        }
+
+        .fab-top.show {
+            display: flex
+        }
+
+        .fab-top:hover {
+            background: var(--amber);
+            color: var(--bark)
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:1060px) {
+            .pgrid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .shops-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px
+            }
+        }
+
+        @media(max-width:860px) {
+            nav {
+                padding: 0 22px;
+                height: 62px
+            }
+
+            .nav-r {
+                position: fixed;
+                top: 62px;
+                left: 0;
+                right: 0;
+                background: rgba(20, 10, 2, .98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 28px 24px;
+                gap: 20px;
+                align-items: flex-start;
+                transform: translateY(-110%);
+                opacity: 0;
+                transition: transform .35s, opacity .35s;
+                pointer-events: none
+            }
+
+            .nav-r.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all
+            }
+
+            .nav-r a {
+                font-size: 14px;
+                width: 100%;
+                letter-spacing: 1.5px
+            }
+
+            .nav-pill,
+            .nav-translate {
+                align-self: flex-start
+            }
+
+            .nav-burger {
+                display: flex
+            }
+
+            .hero-content {
+                padding: 110px 24px 60px;
+                max-width: none
+            }
+
+            .hero-stats {
+                display: none
+            }
+
+            .scroll-indicator {
+                left: 24px;
+                bottom: 20px
+            }
+
+            .section {
+                padding: 72px 22px
+            }
+
+            .pgrid {
+                grid-template-columns: 1fr
+            }
+
+            .quienes-inner {
+                grid-template-columns: 1fr;
+                gap: 48px
+            }
+
+            .quienes-deco {
+                display: none
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .shops-grid {
+                grid-template-columns: 1fr;
+                gap: 20px
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+                max-width: 360px;
+                margin-left: auto;
+                margin-right: auto
+            }
+
+            .trabaja-bg {
+                padding: 56px 22px
+            }
+
+            footer {
+                padding: 48px 22px 28px
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+                margin-bottom: 32px;
+                padding-bottom: 28px
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px
+            }
+
+            .form-card {
+                padding: 28px 22px
+            }
+
+            .submit-btn {
+                justify-self: stretch;
+                width: 100%;
+                text-align: center
+            }
+
+            .ck-banner {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                max-width: none
+            }
+        }
+
+        @media(max-width:500px) {
+            .hero-content h1 {
+                font-size: 44px
+            }
+
+            .hero-btns {
+                flex-direction: column
+            }
+
+            .btn-amber,
+            .btn-outline,
+            .btn-dark {
+                text-align: center
+            }
+
+            .shops-grid {
+                grid-template-columns: 1fr
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr
+            }
+
+            .footer-legal {
+                flex-direction: column;
+                gap: 8px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav id="nav">
+        <a href="#" class="logo">Irun <em>Larreaundi</em></a>
+        <button class="nav-burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+        <div class="nav-r" id="navlinks">
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#tiendas">Tiendas</a>
+            <a href="#enc">Contacto</a>
+            <div class="nav-translate" title="Traducir página">
+                <span class="nav-translate-lbl">🌐 Traductor</span>
+                <div id="google_translate_element"></div>
+            </div>
+            <a href="#tiendas" class="nav-pill">Nuestras tiendas</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-overlay2"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <div class="hero-eyebrow-line"></div><span>Obrador artesanal · Irun, Gipuzkoa</span>
+            </div>
+            <h1>El pan<br><em>de verdad,</em><span class="line3">cada día.</span></h1>
+            <p class="hero-desc">Fabricamos pan y bollería artesanal desde primera hora de la mañana. Sin atajos, con
+                las recetas de siempre y reparto propio en Irun y Oiartzun.</p>
+            <div class="hero-btns">
+                <a href="#productos" class="btn-amber">Ver productos</a>
+                <a href="#tiendas" class="btn-dark">Nuestras tiendas</a>
+                <a href="#enc" class="btn-outline">Cómo llegar</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="hstat"><span class="hstat-n">+40</span><span class="hstat-l">Productos</span></div>
+            <div class="hstat"><span class="hstat-n">7</span><span class="hstat-l">Días/semana</span></div>
+            <div class="hstat"><span class="hstat-n">100%</span><span class="hstat-l">Artesanal</span></div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div><span>Descubre</span>
+        </div>
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+        <div class="marquee-track">
+            <span class="marquee-item">Panadería artesanal</span><span class="marquee-item">Bollería de
+                obrador</span><span class="marquee-item">Reparto diario</span><span class="marquee-item">Irun ·
+                Oiartzun</span><span class="marquee-item">Elaboración propia</span><span class="marquee-item">Producto
+                fresco</span><span class="marquee-item">Para hostelería</span><span class="marquee-item">Recetas de
+                siempre</span><span class="marquee-item">Panadería artesanal</span><span class="marquee-item">Bollería
+                de obrador</span><span class="marquee-item">Reparto diario</span><span class="marquee-item">Irun ·
+                Oiartzun</span><span class="marquee-item">Elaboración propia</span><span class="marquee-item">Producto
+                fresco</span><span class="marquee-item">Para hostelería</span><span class="marquee-item">Recetas de
+                siempre</span>
+        </div>
+    </div>
+
+    <section class="section productos-bg" id="productos">
+        <div class="section-inner">
+            <div class="section-header sr">
+                <span class="sh-tag">Lo que hacemos</span>
+                <h2>Del horno<br><em>a tu mesa</em></h2>
+                <p>Más de 40 referencias elaboradas cada día. Pan, bollería y pastelería artesanal con ingredientes de
+                    calidad.</p>
+            </div>
+            <div class="pgrid">
+                <div class="pc sr">
+                    <div class="pc-accent"></div>
+                    <div class="pc-num">01</div><span class="pc-ico">🍞</span>
+                    <h3>Panadería</h3>
+                    <p>Pan de barra, hogazas, panes especiales y mucho más. Todo recién hecho cada mañana en nuestro
+                        obrador.</p><span class="pc-label">Elaboración propia</span>
+                </div>
+                <div class="pc sr" style="transition-delay:.07s">
+                    <div class="pc-accent"></div>
+                    <div class="pc-num">02</div><span class="pc-ico">🥐</span>
+                    <h3>Bollería artesanal</h3>
+                    <p>Croissants, napolitanas, donuts, pastelería tradicional y mucho más. Recetas de toda la vida.</p>
+                    <span class="pc-label">+30 referencias</span>
+                </div>
+                <div class="pc sr" style="transition-delay:.14s">
+                    <div class="pc-accent"></div>
+                    <div class="pc-num">03</div><span class="pc-ico">☕</span>
+                    <h3>Cafetería</h3>
+                    <p>Desayunos con producto propio recién salido del horno. Ambiente cercano y de toda la vida.</p>
+                    <span class="pc-label">Cada día</span>
+                </div>
+                <div class="pc sr" style="transition-delay:.07s">
+                    <div class="pc-accent"></div>
+                    <div class="pc-num">04</div><span class="pc-ico">📦</span>
+                    <h3>Para negocios</h3>
+                    <p>Suministro diario para bares, restaurantes y tiendas. Cantidades adaptadas, trato directo.</p>
+                    <span class="pc-label">Hostelería</span>
+                </div>
+                <div class="pc sr" style="transition-delay:.14s">
+                    <div class="pc-accent"></div>
+                    <div class="pc-num">05</div><span class="pc-ico">❄️</span>
+                    <h3>Congelados propios</h3>
+                    <p>Parte de nuestra producción va a congelación para garantizar disponibilidad en todo momento.</p>
+                    <span class="pc-label">Siempre disponible</span>
+                </div>
+                <div class="pc sr" style="transition-delay:.21s">
+                    <div class="pc-accent"></div>
+                    <div class="pc-num">06</div><span class="pc-ico">🚐</span>
+                    <h3>Reparto diario</h3>
+                    <p>Entrega cada mañana en Irun y Oiartzun. Fresco, puntual y directo desde el obrador.</p><span
+                        class="pc-label">Irun · Oiartzun</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section quienes-bg" id="nosotros">
+        <div class="quienes-deco">IRUN</div>
+        <div class="section-inner">
+            <div class="quienes-inner">
+                <div class="quienes-text sr-l">
+                    <span class="sh-tag">Quiénes somos</span>
+                    <h2>Un obrador<br>de toda<br>la vida</h2>
+                    <p>Irun Larreaundi es un negocio familiar con <strong>obrador propio y cafetería</strong> en Irun.
+                        Llevamos años elaborando pan y bollería artesanal con las recetas de siempre, sin atajos.</p>
+                    <p>Trabajamos desde primera hora para que el producto llegue <strong>siempre fresco</strong>.
+                        Repartimos cada día a nuestras tiendas y a clientes de hostelería de la zona.</p>
+                    <p>Trato directo, producto de calidad y <strong>sin intermediarios</strong>.</p>
+                    <a href="#hazte-cliente" class="btn-amber" style="margin-top:28px">Hazte cliente</a>
+                </div>
+                <div class="stats-grid sr-r">
+                    <div class="stat"><span class="stat-n">+40</span><span class="stat-l">Productos a diario</span>
+                    </div>
+                    <div class="stat"><span class="stat-n">7</span><span class="stat-l">Días a la semana</span></div>
+                    <div class="stat"><span class="stat-n">3</span><span class="stat-l">Tiendas propias</span></div>
+                    <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Elaboración propia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section join-bg sr" id="hazte-cliente">
+        <div class="section-inner">
+            <div class="join-wrap">
+                <span class="sh-tag" style="display:block;margin-bottom:12px">Únete</span>
+                <h2>Hazte <em>cliente</em></h2>
+                <p>Forma parte de nuestra familia y recibe novedades, productos de temporada y ofertas exclusivas.</p>
+                <form class="form-card" id="joinForm" novalidate>
+                    <div><label class="field-label" for="f-name">Nombre y apellidos</label><input class="field-input"
+                            id="f-name" name="nombre" type="text" required autocomplete="name"
+                            placeholder="Tu nombre completo"></div>
+                    <div><label class="field-label" for="f-email">Email</label><input class="field-input" id="f-email"
+                            name="email" type="email" required autocomplete="email" placeholder="tu@email.com"></div>
+                    <div><label class="field-label" for="f-phone">Teléfono <span
+                                style="opacity:.55;text-transform:none;letter-spacing:0;font-weight:300;font-size:11px">(opcional)</span></label><input
+                            class="field-input" id="f-phone" name="telefono" type="tel" autocomplete="tel"
+                            placeholder="+34 600 000 000"></div>
+                    <label class="check-row"><input type="checkbox" name="privacidad" required><span>He leído y acepto
+                            la <a href="proteccion-de-datos.html" target="_blank" rel="noopener">política de
+                                protección de datos</a>.</span></label>
+                    <label class="check-row"><input type="checkbox" name="marketing"><span>Deseo recibir ofertas y
+                            novedades por email.</span></label>
+                    <button class="submit-btn" type="submit" id="joinBtn">Hazte cliente</button>
+                    <p class="legal-txt">Responsable: VEYMA LARREAUNDI, S.L. · Finalidad: gestionar tu alta como
+                        cliente.
+                        Legitimación: consentimiento. Destinatarios: no se cederán a terceros. Derechos: <a
+                            href="mailto:supermercado@larreaundi.com">supermercado@larreaundi.com</a>. Más info: <a
+                            href="proteccion-de-datos.html" target="_blank">protección de datos</a>.</p>
+                    <div class="form-feedback" id="joinMsg" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section tiendas-bg" id="tiendas">
+        <div class="section-inner">
+            <div class="tiendas-header sr">
+                <span class="sh-tag" style="display:block">Nuestras tiendas</span>
+                <h2>Tres espacios,<br>una misma <em
+                        style="color:var(--amber);font-style:italic;font-weight:300">filosofía</em></h2>
+                <p>Visítanos en cualquiera de nuestros locales en Irun.</p>
+            </div>
+            <div class="shops-grid">
+                <article class="shop sr">
+                    <div class="shop-img"><img
+                            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80&auto=format&fit=crop"
+                            alt="La Fábrica de Migas" loading="lazy"></div>
+                    <div class="shop-body">
+                        <h3>La Fábrica de Migas</h3>
+                        <p>Nuestra panadería de referencia. Pan y bollería recién hechos cada mañana en el obrador
+                            propio.</p><a href="fabrica-de-migas.html" class="shop-link">Visitar web <span>→</span></a>
+                    </div>
+                </article>
+                <article class="shop sr" style="transition-delay:.1s">
+                    <div class="shop-img"><img
+                            src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=800&q=80&auto=format&fit=crop"
+                            alt="Garmendi Txokolategia" loading="lazy"></div>
+                    <div class="shop-body">
+                        <h3>Garmendi Txokolategia</h3>
+                        <p>Chocolate artesanal y especialidades dulces elaborados con cacao de origen.</p><a
+                            href="garmendi-txokolategia.html" class="shop-link">Visitar web <span>→</span></a>
+                    </div>
+                </article>
+                <!-- FIX: foto supermercado con loading=eager -->
+                <article class="shop sr" style="transition-delay:.2s">
+                    <div class="shop-img"><img
+                            src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&q=80&auto=format&fit=crop"
+                            alt="Supermercado Larreaundi" loading="eager"></div>
+                    <div class="shop-body">
+                        <h3>Supermercado Larreaundi</h3>
+                        <p>Producto fresco de proximidad, alimentación y todo lo necesario para el día a día.</p><a
+                            href="supermercado_larreaundi.html" class="shop-link">Visitar web <span>→</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section enc-bg sr" id="enc">
+        <div class="section-inner">
+            <div class="enc-inner">
+                <span class="sh-tag" style="display:block;margin-bottom:12px">Encuéntranos</span>
+                <h2>Estamos en Irun</h2>
+                <p>Pásate, llámanos o escríbenos. Te atendemos encantados.</p>
+                <div class="contact-cards">
+                    <div class="ccard">
+                        <div class="ccard-ico">📞</div><span class="ccard-lbl">Teléfono</span><a class="ccard-val"
+                            href="tel:+34943005491">943 00 54 91</a>
+                    </div>
+                    <div class="ccard">
+                        <div class="ccard-ico">✉️</div><span class="ccard-lbl">Email</span><a class="ccard-val"
+                            href="mailto:info@irunlarreaundi.com">info@irunlarreaundi.com</a>
+                    </div>
+                    <div class="ccard">
+                        <div class="ccard-ico">📍</div><span class="ccard-lbl">Dirección</span><span
+                            class="ccard-val">Larreaundi<br>20305 Irun · Gipuzkoa</span>
+                    </div>
+                </div>
+                <div class="enc-chips">
+                    <a href="tel:+34943005491" class="chip"><span class="chip-i">📞</span>Llámanos</a>
+                    <a href="mailto:info@irunlarreaundi.com" class="chip"><span class="chip-i">✉️</span>Escríbenos</a>
+                    <a href="https://wa.me/34943005491" class="chip" target="_blank" rel="noopener"><span
+                            class="chip-i">💬</span>WhatsApp</a>
+                    <a href="https://www.instagram.com/irunlarreaundi" class="chip" target="_blank" rel="noopener"><span
+                            class="chip-i">📸</span>Instagram</a>
+                    <a href="trabaja-con-nosotros.html" class="chip"><span class="chip-i">💼</span>Trabaja con
+                        nosotros</a>
+                </div>
+                <div class="map-box">
+                    <div id="mapPlaceholder" class="map-ph">
+                        <div class="map-ph-inner">
+                            <span>🗺️</span>
+                            <p>El mapa de Google Maps requiere aceptar cookies analíticas para cargarse, conforme al
+                                RGPD.</p>
+                            <button class="map-ph-btn" onclick="openCkModal()">Gestionar cookies</button>
+                        </div>
+                    </div>
+                    <div id="mapWrap" style="display:none">
+                        <iframe
+                            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2909.8!2d-1.7916319!3d43.334708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51088b496fbca7%3A0xd7972d348a3c0ed0!2sSupermercado%20Larreaundi!5e0!3m2!1ses!2ses!4v1716800000000"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación Irun Larreaundi"
+                            style="display:block;width:100%;height:380px;border:0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trabaja-bg sr">
+        <h2>¿Quieres formar parte del equipo?</h2>
+        <p>Buscamos personas con ganas en un negocio familiar con mucho futuro.</p>
+        <a href="trabaja-con-nosotros.html" class="btn-amber">Ver ofertas y enviar CV</a>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">Irun <em>Larreaundi</em></a>
+                <p>Obrador artesanal de pan y bollería en Irun, Gipuzkoa. Elaboración propia desde primera hora.</p>
+                <div class="social-row">
+                    <a href="https://www.instagram.com/irunlarreaundi" class="social-ico" aria-label="Instagram"
+                        target="_blank" rel="noopener" title="Instagram">📸</a>
+                    <a href="https://www.facebook.com/irunlarreaundi" class="social-ico" aria-label="Facebook"
+                        target="_blank" rel="noopener" title="Facebook">👍</a>
+                    <a href="https://wa.me/34943005491" class="social-ico" aria-label="WhatsApp" target="_blank"
+                        rel="noopener" title="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="white">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <a href="#productos">Productos</a><a href="#nosotros">Quiénes somos</a><a href="#tiendas">Nuestras
+                    tiendas</a><a href="#hazte-cliente">Hazte cliente</a><a href="#enc">Contacto</a>
+            </div>
+            <div class="footer-col">
+                <h4>Tiendas</h4>
+                <a href="fabrica-de-migas.html">La Fábrica de Migas</a>
+                <a href="garmendi-txokolategia.html">Garmendi Txokolategia</a>
+                <a href="supermercado_larreaundi.html">Supermercado Larreaundi</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <a href="tel:+34943005491">943 00 54 91</a>
+                <a href="mailto:info@irunlarreaundi.com">info@irunlarreaundi.com</a>
+                <a href="#enc">Larreaundi, Irun</a>
+                <a href="trabaja-con-nosotros.html" style="margin-top:8px">Trabaja con nosotros</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 VEYMA LARREAUNDI, S.L. · Todos los derechos reservados</p>
+            <div class="footer-legal">
+                <a href="aviso-legal.html">Aviso legal</a>
+                <a href="proteccion-de-datos.html">Protección de datos</a>
+                <a href="politica-cookies.html">Política de cookies</a>
+                <button class="footer-ck-btn" onclick="openCkModal()">🍪 Gestionar cookies</button>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/34943005491" class="fab-wa" target="_blank" rel="noopener"
+        aria-label="Contactar por WhatsApp" title="Escríbenos por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+    <button class="fab-top" id="fabTop" aria-label="Volver arriba">↑</button>
+
+    <!-- COOKIE BANNER — texto LSSI-CE según indicaciones legales -->
+    <div class="ck-banner" id="ckBanner" role="dialog" aria-label="Aviso de cookies">
+        <h4>🍪 Uso de Cookies</h4>
+        <p>Utilizamos cookies para mejorar su experiencia de navegación y analizar nuestro tráfico. Puede conocer la
+            <a href="politica-cookies.html">Política de Cookies</a>, aceptar, personalizar o rechazarlas en los
+            enlaces indicados.
+        </p>
+        <div class="ck-btns">
+            <button class="ck-accept" id="ckAccept">Aceptar</button>
+            <button class="ck-reject" id="ckReject">Rechazar</button>
+            <button class="ck-custom-btn" id="ckCustom">Configurar</button>
+        </div>
+    </div>
+
+    <div class="ck-modal" id="ckModal" role="dialog" aria-label="Personalizar cookies">
+        <div class="ck-box">
+            <h3>Configurar cookies</h3>
+            <p>Elige qué cookies quieres permitir. Las estrictamente necesarias no se pueden desactivar. El mapa de
+                Google Maps solo se cargará si aceptas las cookies analíticas.</p>
+            <div class="ck-row">
+                <div class="ck-info"><strong>Estrictamente necesarias</strong><span>Imprescindibles para el
+                        funcionamiento básico de la web. Incluye la cookie de preferencias de cookies.</span></div>
+                <label class="ck-switch"><input type="checkbox" checked disabled><span class="ck-slider"></span></label>
+            </div>
+            <div class="ck-row">
+                <div class="ck-info"><strong>Analíticas</strong><span>Permiten cargar Google Maps y entender cómo se usa
+                        la web de forma anónima (Google Analytics).</span></div><label class="ck-switch"><input
+                        type="checkbox" id="ckAnalytics"><span class="ck-slider"></span></label>
+            </div>
+            <div class="ck-row">
+                <div class="ck-info"><strong>Marketing</strong><span>Permiten mostrar contenido y anuncios
+                        personalizados (Meta Pixel, redes sociales).</span></div><label class="ck-switch"><input
+                        type="checkbox" id="ckMarketing"><span class="ck-slider"></span></label>
+            </div>
+            <div class="ck-actions">
+                <button class="ck-save" id="ckSave">Guardar selección</button>
+                <button class="ck-all" id="ckAcceptAll">Aceptar todas</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit" defer></script>
+    <script>
+        // NAV
+        const navEl = document.getElementById('nav'), burgerBtn = document.getElementById('burger'), navLinks = document.getElementById('navlinks');
+        window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrollY > 60), { passive: true });
+        burgerBtn.addEventListener('click', () => { const o = navLinks.classList.toggle('open'); burgerBtn.classList.toggle('open', o); burgerBtn.setAttribute('aria-label', o ? 'Cerrar menú' : 'Abrir menú'); });
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); burgerBtn.classList.remove('open'); }));
+        window.addEventListener('load', () => document.getElementById('hero').classList.add('loaded'));
+
+        // SCROLL REVEAL
+        const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target) } }), { threshold: .08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.sr,.sr-l,.sr-r').forEach(el => obs.observe(el));
+
+        // BACK TO TOP
+        const fabTop = document.getElementById('fabTop');
+        window.addEventListener('scroll', () => fabTop.classList.toggle('show', scrollY > 400), { passive: true });
+        fabTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // FORM
+        const N8N = 'https://n8n.tu-dominio.com/webhook/hazte-cliente';
+        const joinForm = document.getElementById('joinForm'), joinBtn = document.getElementById('joinBtn'), joinMsg = document.getElementById('joinMsg');
+        joinForm.addEventListener('submit', async e => {
+            e.preventDefault(); joinMsg.className = 'form-feedback'; joinMsg.textContent = '';
+            const fd = new FormData(joinForm);
+            const data = { nombre: (fd.get('nombre') || '').trim(), email: (fd.get('email') || '').trim(), telefono: (fd.get('telefono') || '').trim(), acepta_privacidad: !!fd.get('privacidad'), acepta_marketing: !!fd.get('marketing'), origen: 'irunlarreaundi', fecha: new Date().toISOString() };
+            if (!data.nombre || !data.email || !data.acepta_privacidad) { joinMsg.className = 'form-feedback err'; joinMsg.textContent = 'Por favor, completa los campos obligatorios y acepta la política de protección de datos.'; return; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { joinMsg.className = 'form-feedback err'; joinMsg.textContent = 'El email no parece válido.'; return; }
+            joinBtn.disabled = true; const orig = joinBtn.textContent; joinBtn.textContent = 'Enviando…';
+            try { const res = await fetch(N8N, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }); if (!res.ok) throw new Error(); joinMsg.className = 'form-feedback ok'; joinMsg.textContent = '¡Bienvenido/a a nuestra familia!!!'; joinForm.querySelectorAll('input').forEach(i => { if (i.type === 'checkbox') i.checked = false; else i.value = ''; }); }
+            catch { joinMsg.className = 'form-feedback err'; joinMsg.textContent = 'No se ha podido enviar. Inténtalo de nuevo en unos minutos.'; }
+            finally { joinBtn.disabled = false; joinBtn.textContent = orig; }
+        });
+
+        // COOKIES
+        const CK = 'irunlarreaundi_ck_v1';
+        const ckBanner = document.getElementById('ckBanner');
+        const ckModal = document.getElementById('ckModal');
+        const ckAn = document.getElementById('ckAnalytics');
+        const ckMk = document.getElementById('ckMarketing');
+
+        function loadCk() { try { return JSON.parse(localStorage.getItem(CK)) } catch { return null } }
+        function saveCk(o) { const prefs = { ...o, ts: Date.now() }; localStorage.setItem(CK, JSON.stringify(prefs)); applyConsent(prefs); }
+
+        function applyConsent(prefs) {
+            const ph = document.getElementById('mapPlaceholder');
+            const mw = document.getElementById('mapWrap');
+            if (!ph || !mw) return;
+            if (prefs && prefs.analytics) {
+                ph.style.display = 'none';
+                mw.style.display = 'block';
+                const ifr = mw.querySelector('iframe[data-src]');
+                if (ifr && !ifr.src) { ifr.src = ifr.dataset.src; }
+            } else {
+                ph.style.display = 'flex';
+                mw.style.display = 'none';
+            }
+        }
+
+        function openCkModal() {
+            const s = loadCk() || {};
+            ckAn.checked = !!s.analytics;
+            ckMk.checked = !!s.marketing;
+            ckModal.classList.add('show');
+        }
+
+        const saved = loadCk();
+        if (!saved) { setTimeout(() => ckBanner.classList.add('show'), 1200); }
+        applyConsent(saved);
+
+        document.getElementById('ckAccept').onclick = () => { saveCk({ necessary: true, analytics: true, marketing: true }); ckBanner.classList.remove('show'); };
+        document.getElementById('ckReject').onclick = () => { saveCk({ necessary: true, analytics: false, marketing: false }); ckBanner.classList.remove('show'); };
+        document.getElementById('ckCustom').onclick = openCkModal;
+        document.getElementById('ckSave').onclick = () => { saveCk({ necessary: true, analytics: ckAn.checked, marketing: ckMk.checked }); ckModal.classList.remove('show'); ckBanner.classList.remove('show'); };
+        document.getElementById('ckAcceptAll').onclick = () => { saveCk({ necessary: true, analytics: true, marketing: true }); ckModal.classList.remove('show'); ckBanner.classList.remove('show'); };
+        ckModal.onclick = e => { if (e.target === ckModal) ckModal.classList.remove('show'); };
+    </script>
+</body>
+
+</html>
