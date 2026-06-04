@@ -1,0 +1,1856 @@
+  <html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1C0F05">
+    <title>Supermercado Larreaundi — Producto Fresco en Irun</title>
+    <meta name="description"
+      content="Supermercado Larreaundi en Irun. Producto fresco de proximidad, carnicería, panadería propia Larreaundi y todo lo necesario para el día a día.">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <!--
+  ═══════════════════════════════════════════════════
+  FUENTES LOCALES — descargar y poner en /assets/fonts/
+  https://fonts.google.com/specimen/Cormorant+Garamond
+  https://fonts.google.com/specimen/DM+Sans
+  Convertir a WOFF2 con https://cloudconvert.com/ttf-to-woff2
+  Una vez descargadas, sustituir el <link> de Google Fonts por:
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  ═══════════════════════════════════════════════════
+-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet">
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+      }
+
+      :root {
+        --ink: #1C0F05;
+        --bark: #2A1608;
+        --bark2: #3D2010;
+        --clay: #6B3A1F;
+        --amber: #C8853A;
+        --gold: #E0A84A;
+        --gold-soft: #F0CC80;
+        --cream: #FAF3E8;
+        --paper: #F5EDD8;
+        --linen: #EAE0CC;
+        --linen2: #DDD0B8;
+        --muted: #7A5E40;
+        --wh: #FFFCF5;
+        --green: #2E6E3E
+      }
+
+      html {
+        scroll-behavior: smooth
+      }
+
+      body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased
+      }
+
+      img {
+        max-width: 100%;
+        display: block
+      }
+
+      .sr {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1)
+      }
+
+      .sr.on {
+        opacity: 1;
+        transform: none
+      }
+
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 900;
+        height: 66px;
+        padding: 0 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: background .4s
+      }
+
+      nav.scrolled {
+        background: rgba(28, 15, 5, .96);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .06)
+      }
+
+      .logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--wh);
+        text-decoration: none
+      }
+
+      .logo em {
+        color: var(--gold);
+        font-style: italic;
+        font-weight: 300
+      }
+
+      .nav-back {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .55);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color .2s
+      }
+
+      .nav-back:hover {
+        color: var(--gold-soft)
+      }
+
+      /* HERO
+   ──────────────────────────────────────────────────────
+   IMAGEN: sustituir la URL de Unsplash por imagen propia
+   Ruta destino: /assets/img/supermercado-hero.webp
+   Tamaño: 1920 px de ancho, formato WebP, calidad 80
+   Herramienta: https://bulkresizephotos.com/es
+   ──────────────────────────────────────────────────────
+*/
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        background: var(--bark)
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background: url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat;
+        /* TODO → background:url('assets/img/supermercado-hero.webp') center/cover no-repeat; */
+        transform: scale(1.04);
+        transition: transform 8s ease
+      }
+
+      .hero.loaded .hero-bg {
+        transform: scale(1)
+      }
+
+      .hero-ov {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(160deg, rgba(28, 15, 5, .3) 0%, rgba(28, 15, 5, .55) 40%, rgba(28, 15, 5, .92) 75%, rgba(28, 15, 5, 1) 100%)
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 48px 80px;
+        max-width: 780px
+      }
+
+      .hero-tag {
+        font-size: 10px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--amber);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px
+      }
+
+      .hero-tag::before {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 1px;
+        background: var(--amber)
+      }
+
+      .hero-content h1 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(48px, 7vw, 92px);
+        line-height: 1.02;
+        color: var(--wh);
+        font-weight: 600;
+        margin-bottom: 22px
+      }
+
+      .hero-content h1 em {
+        color: var(--gold);
+        font-style: italic;
+        font-weight: 300;
+        display: block
+      }
+
+      .hero-content p {
+        font-size: clamp(15px, 1.8vw, 18px);
+        font-weight: 300;
+        color: rgba(255, 255, 255, .6);
+        line-height: 1.85;
+        max-width: 500px;
+        margin-bottom: 40px
+      }
+
+      .hero-btns {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap
+      }
+
+      .btn-amber {
+        background: var(--amber);
+        color: var(--bark);
+        padding: 14px 30px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 2px;
+        transition: all .2s;
+        display: inline-block;
+        border: 0;
+        cursor: pointer;
+        font-family: inherit
+      }
+
+      .btn-amber:hover {
+        background: var(--gold);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(200, 133, 58, .3)
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, .3);
+        color: rgba(255, 255, 255, .75);
+        padding: 14px 30px;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 2px;
+        transition: all .2s;
+        display: inline-block
+      }
+
+      .btn-outline:hover {
+        border-color: var(--gold-soft);
+        color: var(--gold-soft)
+      }
+
+      /* MARQUEE */
+      .marquee-wrap {
+        background: var(--green);
+        overflow: hidden;
+        padding: 13px 0
+      }
+
+      .marquee-track {
+        display: flex;
+        animation: marquee 22s linear infinite;
+        width: max-content
+      }
+
+      .marquee-item {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .8);
+        padding: 0 32px;
+        white-space: nowrap;
+        opacity: .9
+      }
+
+      .marquee-item::before {
+        content: '✦';
+        margin-right: 32px;
+        opacity: .4
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX(0)
+        }
+
+        to {
+          transform: translateX(-50%)
+        }
+      }
+
+      /* SECCIONES */
+      .sec {
+        padding: 96px 48px
+      }
+
+      .sec-inner {
+        max-width: 1100px;
+        margin: 0 auto
+      }
+
+      .sh-tag {
+        font-size: 10px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--amber);
+        display: block;
+        margin-bottom: 12px
+      }
+
+      .sec-h {
+        margin-bottom: 56px
+      }
+
+      .sec-h h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(36px, 4vw, 60px);
+        color: var(--bark);
+        font-weight: 700;
+        line-height: 1.08;
+        margin-bottom: 14px
+      }
+
+      .sec-h h2 em {
+        color: var(--amber);
+        font-style: italic;
+        font-weight: 300
+      }
+
+      .sec-h p {
+        font-size: 16px;
+        color: var(--muted);
+        font-weight: 300;
+        max-width: 460px;
+        line-height: 1.85
+      }
+
+      .pgrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--linen2)
+      }
+
+      .pc {
+        background: var(--cream);
+        padding: 40px 32px;
+        position: relative;
+        overflow: hidden;
+        transition: background .3s
+      }
+
+      .pc:hover {
+        background: var(--wh)
+      }
+
+      .pc-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--amber), var(--gold));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .4s cubic-bezier(.16, 1, .3, 1)
+      }
+
+      .pc:hover .pc-accent {
+        transform: scaleX(1)
+      }
+
+      .pc-num {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 80px;
+        color: var(--linen2);
+        font-weight: 700;
+        line-height: .9;
+        margin-bottom: 20px;
+        user-select: none;
+        transition: color .3s
+      }
+
+      .pc:hover .pc-num {
+        color: rgba(200, 133, 58, .1)
+      }
+
+      .pc-ico {
+        font-size: 32px;
+        display: block;
+        margin-bottom: 12px
+      }
+
+      .pc h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 22px;
+        color: var(--bark);
+        font-weight: 700;
+        margin-bottom: 8px
+      }
+
+      .pc p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.85;
+        font-weight: 300
+      }
+
+      .pc-lbl {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 16px;
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--clay);
+        font-weight: 500
+      }
+
+      .pc-lbl::before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 1px;
+        background: var(--amber)
+      }
+
+      /* BLOQUE OFERTAS CLIENTES */
+      .ofertas-cliente-bg {
+        background: linear-gradient(135deg, var(--paper) 0%, var(--cream) 100%)
+      }
+
+      .ofertas-cliente-grid {
+        display: grid;
+        grid-template-columns: .95fr 1.05fr;
+        gap: 28px;
+        align-items: stretch
+      }
+
+      .ofertas-info,
+      .pack-card {
+        background: var(--wh);
+        border: 1px solid rgba(107, 58, 31, .12);
+        border-radius: 14px;
+        box-shadow: 0 18px 48px rgba(107, 58, 31, .08)
+      }
+
+      .ofertas-info {
+        padding: 42px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center
+      }
+
+      .ofertas-info h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(30px, 3vw, 44px);
+        color: var(--bark);
+        font-weight: 700;
+        line-height: 1.08;
+        margin-bottom: 14px
+      }
+
+      .ofertas-info h3 em {
+        color: var(--amber);
+        font-style: italic;
+        font-weight: 300
+      }
+
+      .ofertas-info p {
+        font-size: 15px;
+        color: var(--muted);
+        font-weight: 300;
+        line-height: 1.85;
+        margin-bottom: 24px
+      }
+
+      .pack-card {
+        overflow: hidden;
+        position: relative
+      }
+
+      .pack-top {
+        background: var(--bark);
+        color: var(--wh);
+        padding: 26px 30px;
+        position: relative
+      }
+
+      .pack-badge {
+        display: inline-block;
+        background: var(--amber);
+        color: var(--bark);
+        border-radius: 100px;
+        padding: 7px 13px;
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 14px
+      }
+
+      .pack-top h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(30px, 3vw, 46px);
+        color: var(--wh);
+        font-weight: 700;
+        line-height: 1.05;
+        margin-bottom: 6px
+      }
+
+      .pack-tagline {
+        font-size: 13px;
+        color: var(--gold-soft);
+        font-weight: 500;
+        letter-spacing: .5px;
+        margin-bottom: 8px;
+        font-style: italic
+      }
+
+      .pack-top p {
+        font-size: 13px;
+        color: rgba(255, 255, 255, .58);
+        line-height: 1.7;
+        font-weight: 300
+      }
+
+      .pack-dates {
+        margin-top: 12px;
+        color: var(--gold-soft) !important;
+        font-size: 11px !important;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-weight: 500 !important
+      }
+
+      .pack-body {
+        padding: 30px
+      }
+
+      .pack-products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 24px
+      }
+
+      .pack-product {
+        background: var(--paper);
+        border: 1px solid rgba(107, 58, 31, .08);
+        border-radius: 8px;
+        padding: 12px 14px;
+        font-size: 13px;
+        color: var(--bark);
+        line-height: 1.45
+      }
+
+      .pack-product span {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: var(--amber);
+        font-weight: 700;
+        margin-bottom: 3px
+      }
+
+      .pack-price-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 18px;
+        border-top: 1px solid rgba(107, 58, 31, .12);
+        padding-top: 22px
+      }
+
+      .pack-price small {
+        display: block;
+        font-size: 11px;
+        color: var(--muted);
+        text-decoration: line-through;
+        margin-bottom: 2px
+      }
+
+      .pack-price strong {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 48px;
+        line-height: .9;
+        color: var(--green)
+      }
+
+      .pack-note {
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.5;
+        max-width: 190px
+      }
+
+      /* VENTAJAS */
+      .ventajas-bg {
+        background: var(--bark)
+      }
+
+      .ventajas-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        max-width: none;
+        margin: 0
+      }
+
+      .ventajas-img {
+        position: relative;
+        overflow: hidden;
+        min-height: 500px
+      }
+
+      .ventajas-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+      }
+
+      .ventajas-text {
+        padding: 80px 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center
+      }
+
+      .ventajas-text .sh-tag {
+        color: var(--amber)
+      }
+
+      .ventajas-text h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(32px, 3.5vw, 52px);
+        color: var(--wh);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 32px
+      }
+
+      .ventaja-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 24px
+      }
+
+      .ventaja-ico {
+        font-size: 28px;
+        flex-shrink: 0;
+        margin-top: 2px
+      }
+
+      .ventaja-item h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
+        color: var(--wh);
+        font-weight: 700;
+        margin-bottom: 4px
+      }
+
+      .ventaja-item p {
+        font-size: 13px;
+        color: rgba(255, 255, 255, .5);
+        font-weight: 300;
+        line-height: 1.7
+      }
+
+      /* SECCIONES DESTACADAS */
+      .oferta-bg {
+        background: var(--paper)
+      }
+
+      .oferta-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px
+      }
+
+      .oferta-card {
+        background: var(--wh);
+        border: 1px solid rgba(107, 58, 31, .1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all .3s
+      }
+
+      .oferta-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(107, 58, 31, .12)
+      }
+
+      .oferta-img {
+        height: 180px;
+        overflow: hidden
+      }
+
+      /* TODO: Imágenes de las secciones → /assets/img/seccion-*.webp (doble del tamaño visible ≈ 600×360) */
+      .oferta-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .6s ease
+      }
+
+      .oferta-card:hover .oferta-img img {
+        transform: scale(1.08)
+      }
+
+      .oferta-body {
+        padding: 18px
+      }
+
+      .oferta-tag {
+        font-size: 9px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--amber);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 6px
+      }
+
+      .oferta-body h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 17px;
+        color: var(--bark);
+        font-weight: 700;
+        margin-bottom: 4px
+      }
+
+      .oferta-body p {
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 300;
+        line-height: 1.6
+      }
+
+      /* CONTACTO */
+      .enc-bg {
+        background: var(--cream);
+        text-align: center
+      }
+
+      .enc-inner {
+        max-width: 800px;
+        margin: 0 auto
+      }
+
+      .enc-inner h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(32px, 4vw, 52px);
+        color: var(--bark);
+        font-weight: 700;
+        margin-bottom: 12px
+      }
+
+      .enc-inner>p {
+        font-size: 16px;
+        color: var(--muted);
+        font-weight: 300;
+        max-width: 400px;
+        margin: 0 auto 40px;
+        line-height: 1.85
+      }
+
+      .contact-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-bottom: 36px
+      }
+
+      .ccard {
+        background: var(--wh);
+        border: 1px solid rgba(107, 58, 31, .1);
+        border-radius: 10px;
+        padding: 26px 20px;
+        text-align: left;
+        transition: all .25s
+      }
+
+      .ccard:hover {
+        border-color: var(--amber);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(107, 58, 31, .1)
+      }
+
+      .ccard-ico {
+        font-size: 22px;
+        margin-bottom: 10px
+      }
+
+      .ccard-lbl {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--amber);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 7px
+      }
+
+      .ccard-val {
+        font-size: 14px;
+        color: var(--bark);
+        font-weight: 500;
+        text-decoration: none;
+        line-height: 1.5;
+        display: block;
+        word-break: break-word
+      }
+
+      a.ccard-val:hover {
+        color: var(--clay)
+      }
+
+      .horario-box {
+        background: var(--paper);
+        border: 1px solid rgba(107, 58, 31, .12);
+        border-left: 3px solid var(--amber);
+        border-radius: 4px;
+        padding: 20px 28px;
+        margin: 0 auto 36px;
+        max-width: 500px;
+        text-align: left
+      }
+
+      .horario-box h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        color: var(--bark);
+        font-weight: 700;
+        margin-bottom: 12px
+      }
+
+      .horario-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: var(--muted);
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(107, 58, 31, .08)
+      }
+
+      .horario-row:last-child {
+        border-bottom: 0
+      }
+
+      .horario-row span:last-child {
+        font-weight: 500;
+        color: var(--ink)
+      }
+
+      /* MAPA */
+      .map-box {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(107, 58, 31, .1);
+        box-shadow: 0 8px 28px rgba(107, 58, 31, .08)
+      }
+
+      .map-box iframe {
+        display: block;
+        width: 100%;
+        height: 360px;
+        border: 0
+      }
+
+      .map-ph {
+        height: 360px;
+        background: var(--linen);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 12px;
+        border: 2px dashed var(--linen2)
+      }
+
+      .map-ph-inner {
+        padding: 32px
+      }
+
+      .map-ph-inner span {
+        font-size: 44px;
+        display: block;
+        margin-bottom: 16px
+      }
+
+      .map-ph-inner p {
+        font-size: 14px;
+        color: var(--muted);
+        font-weight: 300;
+        line-height: 1.7;
+        max-width: 320px;
+        margin: 0 auto 20px
+      }
+
+      .map-ph-btn {
+        background: var(--bark);
+        color: var(--gold-soft);
+        padding: 12px 24px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border: 0;
+        border-radius: 2px;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all .2s
+      }
+
+      .map-ph-btn:hover {
+        background: var(--amber);
+        color: var(--bark)
+      }
+
+      /* FOOTER */
+      footer {
+        background: #110900;
+        padding: 40px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        border-top: 1px solid rgba(255, 255, 255, .05)
+      }
+
+      .fl {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
+        color: rgba(255, 255, 255, .3)
+      }
+
+      .fl em {
+        color: rgba(224, 168, 74, .45);
+        font-style: italic
+      }
+
+      .f-legal {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        align-items: center
+      }
+
+      .f-legal a {
+        font-size: 11px;
+        color: rgba(255, 255, 255, .25);
+        text-decoration: none;
+        transition: color .2s
+      }
+
+      .f-legal a:hover {
+        color: rgba(255, 255, 255, .55)
+      }
+
+      .f-ck-btn {
+        font-size: 11px;
+        color: rgba(255, 255, 255, .4);
+        cursor: pointer;
+        background: none;
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 100px;
+        padding: 4px 12px;
+        transition: all .2s;
+        font-family: inherit
+      }
+
+      .f-ck-btn:hover {
+        border-color: var(--amber);
+        color: var(--gold-soft)
+      }
+
+      footer small {
+        font-size: 11px;
+        color: rgba(255, 255, 255, .18)
+      }
+
+      /* FLOATING */
+      .fab-wa {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 800;
+        width: 54px;
+        height: 54px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, .4);
+        text-decoration: none;
+        transition: all .25s
+      }
+
+      .fab-wa:hover {
+        transform: scale(1.12);
+        box-shadow: 0 6px 28px rgba(37, 211, 102, .55)
+      }
+
+      .fab-top {
+        position: fixed;
+        bottom: 90px;
+        right: 26px;
+        z-index: 800;
+        width: 40px;
+        height: 40px;
+        background: rgba(28, 15, 5, .85);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, .15);
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 18px;
+        color: rgba(255, 255, 255, .7);
+        transition: all .25s;
+        border: 0
+      }
+
+      .fab-top.show {
+        display: flex
+      }
+
+      .fab-top:hover {
+        background: var(--amber);
+        color: var(--bark)
+      }
+
+      /* COOKIES */
+      .ck-banner {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        max-width: 480px;
+        background: rgba(28, 15, 5, .97);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(224, 168, 74, .2);
+        border-radius: 12px;
+        padding: 24px 26px;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, .5);
+        z-index: 1000;
+        display: none
+      }
+
+      .ck-banner.show {
+        display: block;
+        animation: ckin .4s ease both
+      }
+
+      @keyframes ckin {
+        from {
+          opacity: 0;
+          transform: translateY(16px)
+        }
+
+        to {
+          opacity: 1;
+          transform: none
+        }
+      }
+
+      .ck-banner h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        color: var(--gold);
+        margin-bottom: 8px
+      }
+
+      .ck-banner p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, .6);
+        line-height: 1.65;
+        margin-bottom: 18px
+      }
+
+      .ck-banner p a {
+        color: var(--gold-soft);
+        text-decoration: underline
+      }
+
+      .ck-btns {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap
+      }
+
+      .ck-btns button {
+        padding: 10px 18px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-weight: 600;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: 'DM Sans', sans-serif;
+        transition: all .2s
+      }
+
+      .ck-accept {
+        background: var(--amber);
+        color: var(--bark)
+      }
+
+      .ck-accept:hover {
+        background: var(--gold)
+      }
+
+      .ck-reject {
+        background: transparent;
+        color: rgba(255, 255, 255, .6);
+        border: 1px solid rgba(255, 255, 255, .2) !important
+      }
+
+      .ck-reject:hover {
+        color: var(--wh)
+      }
+
+      .ck-custom-btn {
+        background: transparent;
+        color: var(--gold-soft);
+        text-decoration: underline;
+        font-size: 11px !important
+      }
+
+      .ck-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 8, 2, .75);
+        z-index: 1100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        backdrop-filter: blur(6px)
+      }
+
+      .ck-modal.show {
+        display: flex
+      }
+
+      .ck-box {
+        background: var(--wh);
+        border-radius: 12px;
+        padding: 36px;
+        max-width: 500px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto
+      }
+
+      .ck-box h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 28px;
+        color: var(--bark);
+        margin-bottom: 8px
+      }
+
+      .ck-box>p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.6;
+        margin-bottom: 24px
+      }
+
+      .ck-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 0;
+        border-top: 1px solid rgba(107, 58, 31, .1)
+      }
+
+      .ck-row:last-of-type {
+        border-bottom: 1px solid rgba(107, 58, 31, .1);
+        margin-bottom: 24px
+      }
+
+      .ck-info strong {
+        display: block;
+        font-size: 14px;
+        color: var(--bark);
+        margin-bottom: 4px
+      }
+
+      .ck-info span {
+        font-size: 12px;
+        color: var(--muted);
+        line-height: 1.5
+      }
+
+      .ck-switch {
+        position: relative;
+        width: 44px;
+        height: 24px;
+        flex-shrink: 0
+      }
+
+      .ck-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0
+      }
+
+      .ck-slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background: #D4C8B8;
+        border-radius: 24px;
+        transition: .25s
+      }
+
+      .ck-slider::before {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        left: 3px;
+        top: 3px;
+        background: #fff;
+        border-radius: 50%;
+        transition: .25s;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .2)
+      }
+
+      .ck-switch input:checked+.ck-slider {
+        background: var(--amber)
+      }
+
+      .ck-switch input:checked+.ck-slider::before {
+        transform: translateX(20px)
+      }
+
+      .ck-switch input:disabled+.ck-slider {
+        background: var(--clay);
+        cursor: not-allowed;
+        opacity: .5
+      }
+
+      .ck-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        flex-wrap: wrap
+      }
+
+      .ck-actions button {
+        padding: 11px 22px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-weight: 600;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: 'DM Sans', sans-serif;
+        transition: all .2s
+      }
+
+      .ck-save {
+        background: var(--bark);
+        color: var(--gold-soft)
+      }
+
+      .ck-save:hover {
+        background: var(--amber);
+        color: var(--bark)
+      }
+
+      .ck-all {
+        background: var(--amber);
+        color: var(--bark)
+      }
+
+      .ck-all:hover {
+        background: var(--gold)
+      }
+
+      @media(max-width:1060px) {
+        .pgrid {
+          grid-template-columns: 1fr 1fr
+        }
+
+        .oferta-grid {
+          grid-template-columns: 1fr 1fr
+        }
+      }
+
+      @media(max-width:860px) {
+        nav {
+          padding: 0 20px;
+          height: 60px
+        }
+
+        .hero-content {
+          padding: 0 22px 60px
+        }
+
+        .sec {
+          padding: 64px 22px
+        }
+
+        .pgrid {
+          grid-template-columns: 1fr
+        }
+
+        .ventajas-inner {
+          grid-template-columns: 1fr
+        }
+
+        .ofertas-cliente-grid {
+          grid-template-columns: 1fr
+        }
+
+        .ofertas-info {
+          padding: 34px 24px
+        }
+
+        .ventajas-img {
+          min-height: 280px
+        }
+
+        .ventajas-text {
+          padding: 48px 22px
+        }
+
+        .oferta-grid {
+          grid-template-columns: 1fr 1fr
+        }
+
+        .contact-row {
+          grid-template-columns: 1fr;
+          max-width: 340px;
+          margin-left: auto;
+          margin-right: auto
+        }
+
+        footer {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 32px 20px
+        }
+
+        .f-legal {
+          justify-content: center
+        }
+
+        .ck-banner {
+          left: 10px;
+          right: 10px;
+          bottom: 10px;
+          max-width: none
+        }
+      }
+
+      @media(max-width:480px) {
+        .hero-btns {
+          flex-direction: column
+        }
+
+        .hero-content h1 {
+          font-size: 42px
+        }
+
+        .oferta-grid {
+          grid-template-columns: 1fr
+        }
+
+        .pack-products {
+          grid-template-columns: 1fr
+        }
+
+        .pack-price-row {
+          align-items: flex-start;
+          flex-direction: column
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <nav id="nav">
+      <a href="index.html" class="logo">Irun <em>Larreaundi</em></a>
+      <a href="index.html" class="nav-back">← Volver</a>
+    </nav>
+
+    <section class="hero" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-ov"></div>
+      <div class="hero-content">
+        <div class="hero-tag">Supermercado de proximidad · Irun</div>
+        <h1>Supermercado<br><em>Larreaundi</em></h1>
+        <p>Producto fresco de proximidad, carnicería, panadería propia y todo lo necesario para el día a día. De Irun,
+          para Irun.</p>
+        <div class="hero-btns">
+          <!-- "Ver ofertas" destacado como principal -->
+          <a href="#ofertas" class="btn-amber">Ver ofertas</a>
+          <a href="#productos" class="btn-outline">Ver secciones</a>
+          <a href="#enc" class="btn-outline">Cómo llegar</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Producto fresco</span><span class="marquee-item">Fruta y verdura</span><span
+          class="marquee-item">Carnicería propia</span><span class="marquee-item">Pan Larreaundi</span><span
+          class="marquee-item">Proximidad</span><span class="marquee-item">Irun · Gipuzkoa</span><span
+          class="marquee-item">Producto fresco</span><span class="marquee-item">Fruta y verdura</span><span
+          class="marquee-item">Carnicería propia</span><span class="marquee-item">Pan Larreaundi</span><span
+          class="marquee-item">Proximidad</span><span class="marquee-item">Irun · Gipuzkoa</span>
+      </div>
+    </div>
+
+    <section class="sec" id="productos">
+      <div class="sec-inner">
+        <div class="sec-h sr"><span class="sh-tag">Nuestras secciones</span>
+          <h2>Todo lo que<br><em>necesitas</em></h2>
+          <p>Un supermercado de barrio con producto de calidad, trato cercano y el pan de Larreaundi recién hecho cada
+            mañana.</p>
+        </div>
+        <div class="pgrid">
+          <div class="pc sr">
+            <div class="pc-accent"></div>
+            <div class="pc-num">01</div><span class="pc-ico">🥦</span>
+            <h3>Fruta y verdura</h3>
+            <p>Producto fresco de temporada seleccionado cada mañana. Fruta de proximidad y verdura de la huerta.</p>
+            <span class="pc-lbl">Fresco diario</span>
+          </div>
+          <div class="pc sr" style="transition-delay:.07s">
+            <div class="pc-accent"></div>
+            <div class="pc-num">02</div><span class="pc-ico">🥩</span>
+            <h3>Carnicería</h3>
+            <p>Carne fresca con corte propio. Ternera, cerdo, pollo y cordero. El carnicero te aconseja.</p><span
+              class="pc-lbl">Corte propio</span>
+          </div>
+          <div class="pc sr" style="transition-delay:.14s">
+            <div class="pc-accent"></div>
+            <div class="pc-num">03</div><span class="pc-ico">🍞</span>
+            <h3>Panadería Larreaundi</h3>
+            <p>El pan y la bollería de nuestro obrador propio, frescos cada mañana. Exclusivo de Supermercado
+              Larreaundi.</p><span class="pc-lbl">Obrador propio</span>
+          </div>
+          <div class="pc sr" style="transition-delay:.07s">
+            <div class="pc-accent"></div>
+            <div class="pc-num">04</div><span class="pc-ico">🧀</span>
+            <h3>Lácteos y charcutería</h3>
+            <p>Quesos, embutidos, yogures y productos lácteos. Selección de marcas de calidad y producto local.</p><span
+              class="pc-lbl">Selección curada</span>
+          </div>
+          <div class="pc sr" style="transition-delay:.14s">
+            <div class="pc-accent"></div>
+            <div class="pc-num">05</div><span class="pc-ico">🥫</span>
+            <h3>Conservas y despensa</h3>
+            <p>Todo lo que necesitas para el día a día. Aceites, conservas, pasta, arroces, legumbres y mucho más.</p>
+            <span class="pc-lbl">Despensa completa</span>
+          </div>
+          <div class="pc sr" style="transition-delay:.21s">
+            <div class="pc-accent"></div>
+            <div class="pc-num">06</div><span class="pc-ico">🧴</span>
+            <h3>Droguería y limpieza</h3>
+            <p>Productos de limpieza del hogar, higiene personal y cuidado. Todo bajo un mismo techo.</p><span
+              class="pc-lbl">Completo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOQUE OFERTAS — cargado dinámicamente desde /assets/json/ofertas.json -->
+    <section class="sec ofertas-cliente-bg" id="ofertas">
+      <div class="sec-inner">
+        <div class="sec-h sr" style="text-align:center;max-width:none">
+          <span class="sh-tag" style="display:block">Ofertas para clientes</span>
+          <h2 style="max-width:none">Ahorra con nuestro <em>pack quincenal</em></h2>
+          <!-- Subtítulo invitador — editar según temporada -->
+          <p style="margin-left:auto;margin-right:auto;max-width:560px">
+            Productos frescos y de calidad seleccionados por nosotros, a un precio que te va a sorprender.
+            Solo para clientes registrados — ¡no dejes pasar esta oportunidad!
+          </p>
+        </div>
+        <div class="ofertas-cliente-grid">
+          <div class="ofertas-info sr">
+            <span class="sh-tag">Cliente registrado</span>
+            <h3>Ofertas exclusivas para nuestros <em>clientes</em></h3>
+            <p>Las ofertas especiales están disponibles para clientes registrados de Supermercado Larreaundi. Si todavía
+              no eres cliente, puedes registrarte en unos minutos y acceder a los packs y promociones activas.</p>
+            <!-- Apunta al formulario de alta del index -->
+            <a href="index.html#hazte-cliente" class="btn-amber">Registrarme</a>
+          </div>
+          <div class="pack-card sr" id="ofertaActiva" style="transition-delay:.08s" aria-live="polite">
+            <div class="pack-top">
+              <span class="pack-badge" id="ofertaBadge">Oferta del momento</span>
+              <h3 id="ofertaTitulo">Pack ahorro de la quincena</h3>
+              <!-- Tagline fijo bajo el título del pack -->
+              <p class="pack-tagline">¡No lo dejes escapar — oferta por tiempo limitado!</p>
+              <p id="ofertaDescripcion">Estamos consultando la última promoción disponible para clientes registrados.
+              </p>
+              <p class="pack-dates" id="ofertaFechas"></p>
+            </div>
+            <div class="pack-body">
+              <div class="pack-products" id="ofertaProductos">
+                <div class="pack-product"><span>Incluye</span>Preparando productos...</div>
+              </div>
+              <div class="pack-price-row">
+                <div class="pack-price">
+                  <small id="ofertaPrecioOriginal">Precio habitual: --</small>
+                  <strong id="ofertaPrecioOferta">--</strong>
+                </div>
+                <!-- Nota: "durante la quincena activa" eliminado -->
+                <p class="pack-note" id="ofertaNota">Pack sujeto a disponibilidad. Oferta válida para clientes
+                  registrados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec ventajas-bg" style="padding:0">
+      <div class="ventajas-inner">
+        <!--
+      IMAGEN INTERIOR: /assets/img/supermercado-interior.webp
+      Tamaño: doble de lo visible ≈ 900×1000 px, WebP calidad 80
+    -->
+        <div class="ventajas-img">
+          <img src="https://images.unsplash.com/photo-1516594798947-e65505dbb29d?w=900&q=80&auto=format&fit=crop"
+            alt="Supermercado Larreaundi interior" loading="lazy">
+        </div>
+        <div class="ventajas-text sr">
+          <span class="sh-tag">Por qué elegirnos</span>
+          <h2>El súper<br>de barrio<br>de siempre</h2>
+          <div class="ventaja-item">
+            <div class="ventaja-ico">🤝</div>
+            <div>
+              <h4>Trato cercano</h4>
+              <p>Nos conocemos de toda la vida. Aquí el cliente no es un número.</p>
+            </div>
+          </div>
+          <div class="ventaja-item">
+            <div class="ventaja-ico">🍞</div>
+            <div>
+              <h4>Pan de obrador propio</h4>
+              <p>El pan y la bollería de Larreaundi, frescos cada mañana. No lo encontrarás en otro súper.</p>
+            </div>
+          </div>
+          <div class="ventaja-item">
+            <div class="ventaja-ico">📍</div>
+            <div>
+              <h4>En el corazón de Irun</h4>
+              <p>En Larreaundi, fácil de aparcar y de llegar. De toda la vida en el barrio.</p>
+            </div>
+          </div>
+          <div class="ventaja-item">
+            <div class="ventaja-ico">🌿</div>
+            <div>
+              <h4>Producto local y de temporada</h4>
+              <p>Priorizamos el producto de proximidad. Mejor sabor, mejor precio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec oferta-bg sr">
+      <div class="sec-inner">
+        <div class="sec-h" style="text-align:center;max-width:none"><span class="sh-tag" style="display:block">Lo más
+            destacado</span>
+          <h2 style="max-width:none">Producto <em>fresco</em> cada día</h2>
+        </div>
+        <div class="oferta-grid">
+          <div class="oferta-card sr">
+            <!-- TODO: /assets/img/seccion-fruta-verdura.webp ~600×360px -->
+            <div class="oferta-img"><img
+                src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&q=80&auto=format&fit=crop"
+                alt="Fruta y verdura" loading="lazy"></div>
+            <div class="oferta-body"><span class="oferta-tag">Sección</span>
+              <h4>Frutas y verduras</h4>
+              <p>Frescas, de temporada y seleccionadas cada mañana</p>
+            </div>
+          </div>
+          <div class="oferta-card sr" style="transition-delay:.07s">
+            <!-- TODO: /assets/img/seccion-carniceria.webp ~600×360px -->
+            <div class="oferta-img"><img
+                src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&q=80&auto=format&fit=crop"
+                alt="Carnicería" loading="lazy"></div>
+            <div class="oferta-body"><span class="oferta-tag">Sección</span>
+              <h4>Carnicería</h4>
+              <p>Carne fresca con corte propio y asesoramiento</p>
+            </div>
+          </div>
+          <div class="oferta-card sr" style="transition-delay:.14s">
+            <!-- TODO: /assets/img/seccion-pan-larreaundi.webp ~600×360px -->
+            <div class="oferta-img"><img
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80&auto=format&fit=crop"
+                alt="Pan Larreaundi" loading="lazy"></div>
+            <div class="oferta-body"><span class="oferta-tag">Exclusivo</span>
+              <h4>Pan de Larreaundi</h4>
+              <p>De nuestro obrador propio, recién hecho cada mañana</p>
+            </div>
+          </div>
+          <div class="oferta-card sr" style="transition-delay:.21s">
+            <!-- TODO: /assets/img/seccion-quesos.webp ~600×360px -->
+            <div class="oferta-img"><img
+                src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&q=80&auto=format&fit=crop"
+                alt="Quesos y lácteos" loading="lazy"></div>
+            <div class="oferta-body"><span class="oferta-tag">Sección</span>
+              <h4>Quesos y charcutería</h4>
+              <p>Selección de quesos, embutidos y producto local</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec enc-bg sr" id="enc">
+      <div class="sec-inner">
+        <div class="enc-inner">
+          <span class="sh-tag" style="display:block;margin-bottom:12px">Encuéntranos</span>
+          <h2>Estamos en Irun</h2>
+          <p>Pásate a hacer la compra. Te esperamos.</p>
+          <div class="horario-box">
+            <h4>🕐 Horario</h4>
+            <div class="horario-row"><span>Lunes – Viernes</span><span>8:00 – 21:00</span></div>
+            <div class="horario-row"><span>Sábados</span><span>8:00 – 21:00</span></div>
+            <div class="horario-row"><span>Domingos y festivos</span><span>9:00 – 14:00</span></div>
+          </div>
+          <div class="contact-row">
+            <div class="ccard">
+              <div class="ccard-ico">📞</div><span class="ccard-lbl">Teléfono</span><a class="ccard-val"
+                href="tel:+34943005491">943 00 54 91</a>
+            </div>
+            <div class="ccard">
+              <div class="ccard-ico">✉️</div><span class="ccard-lbl">Email</span><a class="ccard-val"
+                href="mailto:info@irunlarreaundi.com">info@irunlarreaundi.com</a>
+            </div>
+            <div class="ccard">
+              <div class="ccard-ico">📍</div><span class="ccard-lbl">Dirección</span><span
+                class="ccard-val">Larreaundi<br>20305 Irun · Gipuzkoa</span>
+            </div>
+          </div>
+          <div class="map-box">
+            <div id="mapPlaceholder" class="map-ph">
+              <div class="map-ph-inner">
+                <span>🗺️</span>
+                <p>El mapa de Google Maps requiere aceptar cookies analíticas para cargarse, conforme al RGPD.</p>
+                <button class="map-ph-btn" onclick="openCkModal()">Gestionar cookies</button>
+              </div>
+            </div>
+            <div id="mapWrap" style="display:none">
+              <iframe
+                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2909.8!2d-1.7916319!3d43.334708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd51088b496fbca7%3A0xd7972d348a3c0ed0!2sSupermercado%20Larreaundi!5e0!3m2!1ses!2ses!4v1716800000000"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación Supermercado Larreaundi"
+                style="display:block;width:100%;height:360px;border:0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="fl">Supermercado <em>Larreaundi</em></div>
+      <div class="f-legal">
+        <a href="index.html">← Irun Larreaundi</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="politica-privacidad.html">Política de privacidad</a>
+        <a href="politica-cookies.html">Política de cookies</a>
+        <button class="f-ck-btn" onclick="openCkModal()">🍪 Gestionar cookies</button>
+      </div>
+      <small>© 2026 · Irun, Gipuzkoa</small>
+    </footer>
+
+    <!-- WhatsApp FAB — logo SVG oficial blanco sobre verde corporativo -->
+    <a href="https://wa.me/34943005491" class="fab-wa" target="_blank" rel="noopener"
+      aria-label="Contactar por WhatsApp" title="Escríbenos por WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="white">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+    <button class="fab-top" id="fabTop" aria-label="Volver arriba">↑</button>
+
+    <div class="ck-banner" id="ckBanner" role="dialog" aria-label="Aviso de cookies">
+      <h4>🍪 Cookies</h4>
+      <p>Usamos cookies propias y de terceros (Google Maps). El mapa no se cargará hasta que aceptes las cookies
+        analíticas. <a href="politica-cookies.html">Más info</a>.</p>
+      <div class="ck-btns">
+        <button class="ck-accept" id="ckAccept">Aceptar todas</button>
+        <button class="ck-reject" id="ckReject">Solo necesarias</button>
+        <button class="ck-custom-btn" id="ckCustom">Personalizar</button>
+      </div>
+    </div>
+    <div class="ck-modal" id="ckModal" role="dialog" aria-label="Personalizar cookies">
+      <div class="ck-box">
+        <h3>Personalizar cookies</h3>
+        <p>Elige qué cookies permites. El mapa de Google Maps solo se carga con cookies analíticas aceptadas.</p>
+        <div class="ck-row">
+          <div class="ck-info"><strong>Estrictamente necesarias</strong><span>Imprescindibles para el funcionamiento
+              básico. Incluye la cookie de preferencias.</span></div><label class="ck-switch"><input type="checkbox"
+              checked disabled><span class="ck-slider"></span></label>
+        </div>
+        <div class="ck-row">
+          <div class="ck-info"><strong>Analíticas</strong><span>Permiten cargar Google Maps y medir visitas de forma
+              anónima.</span></div><label class="ck-switch"><input type="checkbox" id="ckAnalytics"><span
+              class="ck-slider"></span></label>
+        </div>
+        <div class="ck-row">
+          <div class="ck-info"><strong>Marketing</strong><span>Permiten mostrar anuncios personalizados.</span></div>
+          <label class="ck-switch"><input type="checkbox" id="ckMarketing"><span class="ck-slider"></span></label>
+        </div>
+        <div class="ck-actions"><button class="ck-save" id="ckSave">Guardar selección</button><button class="ck-all"
+            id="ckAcceptAll">Aceptar todas</button></div>
+      </div>
+    </div>
+
+    <script>
+      const nav = document.getElementById('nav');
+      window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+      window.addEventListener('load', () => document.getElementById('hero').classList.add('loaded'));
+      const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target) } }), { threshold: .08 });
+      document.querySelectorAll('.sr').forEach(el => obs.observe(el));
+      const fabTop = document.getElementById('fabTop');
+      window.addEventListener('scroll', () => fabTop.classList.toggle('show', scrollY > 400), { passive: true });
+      fabTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // ── OFERTA QUINCENAL DESDE JSON ──────────────────────────
+      const OFERTAS_JSON = 'assets/json/ofertas.json';
+      const eur = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
+
+      function parseDateOnly(value) {
+        if (!value) return null;
+        const [y, m, d] = String(value).split('-').map(Number);
+        if (!y || !m || !d) return null;
+        return new Date(y, m - 1, d);
+      }
+      function formatDateES(value) {
+        const date = parseDateOnly(value);
+        if (!date) return '';
+        return date.toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' });
+      }
+      function precio(value) {
+        const n = Number(value);
+        return Number.isFinite(n) ? eur.format(n) : '--';
+      }
+      function ofertaActiva(ofertas) {
+        const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+        return ofertas.find(o => {
+          if (o.activa === false) return false;
+          const desde = parseDateOnly(o.fecha_desde);
+          const hasta = parseDateOnly(o.fecha_hasta);
+          if (desde && hoy < desde) return false;
+          if (hasta && hoy > hasta) return false;
+          return true;
+        }) || null;
+      }
+      function pintarOferta(oferta) {
+        const titulo = document.getElementById('ofertaTitulo');
+        const desc = document.getElementById('ofertaDescripcion');
+        const fechas = document.getElementById('ofertaFechas');
+        const productos = document.getElementById('ofertaProductos');
+        const original = document.getElementById('ofertaPrecioOriginal');
+        const ofertaPrecio = document.getElementById('ofertaPrecioOferta');
+        const nota = document.getElementById('ofertaNota');
+        const badge = document.getElementById('ofertaBadge');
+        if (!titulo || !productos) return;
+        if (!oferta) {
+          badge.textContent = 'Próximamente';
+          titulo.textContent = 'Nueva oferta en preparación';
+          desc.textContent = 'Ahora mismo no hay una oferta quincenal activa. Vuelve pronto o pregunta en tienda.';
+          fechas.textContent = '';
+          productos.innerHTML = '<div class="pack-product"><span>Info</span>Sin oferta activa en este momento</div>';
+          original.textContent = 'Precio habitual: --';
+          ofertaPrecio.textContent = '--';
+          nota.textContent = 'Las ofertas se muestran automáticamente cuando están dentro de su periodo de validez.';
+          return;
+        }
+        badge.textContent = oferta.etiqueta || 'Oferta del momento';
+        titulo.textContent = oferta.titulo || 'Pack ahorro de la quincena';
+        desc.textContent = oferta.descripcion || 'Oferta especial para clientes registrados.';
+        const desde = formatDateES(oferta.fecha_desde);
+        const hasta = formatDateES(oferta.fecha_hasta);
+        fechas.textContent = desde && hasta ? `Válida del ${desde} al ${hasta}` : '';
+        const lista = Array.isArray(oferta.productos) ? oferta.productos : [];
+        productos.innerHTML = lista.length
+          ? lista.map(item => `<div class="pack-product"><span>${item.categoria || 'Incluye'}</span>${item.nombre || ''}${item.cantidad ? ' · ' + item.cantidad : ''}</div>`).join('')
+          : '<div class="pack-product"><span>Incluye</span>Pack de productos seleccionado</div>';
+        original.textContent = `Precio habitual: ${precio(oferta.precio_original)}`;
+        ofertaPrecio.textContent = precio(oferta.precio_oferta);
+        // Nota sin "durante la quincena activa"
+        const notaTexto = (oferta.nota || 'Pack sujeto a disponibilidad. Oferta válida para clientes registrados.').replace(' durante la quincena activa', '').trim();
+        nota.textContent = notaTexto;
+      }
+      fetch(`${OFERTAS_JSON}?v=${Date.now()}`, { cache: 'no-store' })
+        .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+        .then(data => pintarOferta(ofertaActiva(Array.isArray(data.ofertas) ? data.ofertas : [])))
+        .catch(() => pintarOferta(null));
+
+      // ── COOKIES ──────────────────────────────────────────────
+      const CK = 'irunlarreaundi_ck_v1';
+      const ckBanner = document.getElementById('ckBanner'), ckModal = document.getElementById('ckModal'), ckAn = document.getElementById('ckAnalytics'), ckMk = document.getElementById('ckMarketing');
+      function loadCk() { try { return JSON.parse(localStorage.getItem(CK)) } catch { return null } }
+      function saveCk(o) { const p = { ...o, ts: Date.now() }; localStorage.setItem(CK, JSON.stringify(p)); applyConsent(p); }
+      function applyConsent(prefs) {
+        const ph = document.getElementById('mapPlaceholder'), mw = document.getElementById('mapWrap');
+        if (ph && mw) {
+          if (prefs && prefs.analytics) { ph.style.display = 'none'; mw.style.display = 'block'; const ifr = mw.querySelector('iframe[data-src]'); if (ifr && !ifr.src) { ifr.src = ifr.dataset.src; } }
+          else { ph.style.display = 'flex'; mw.style.display = 'none'; }
+        }
+      }
+      function openCkModal() { const s = loadCk() || {}; ckAn.checked = !!s.analytics; ckMk.checked = !!s.marketing; ckModal.classList.add('show'); }
+      const saved = loadCk();
+      if (!saved) { setTimeout(() => ckBanner.classList.add('show'), 1200); }
+      applyConsent(saved);
+      document.getElementById('ckAccept').onclick = () => { saveCk({ necessary: true, analytics: true, marketing: true }); ckBanner.classList.remove('show'); };
+      document.getElementById('ckReject').onclick = () => { saveCk({ necessary: true, analytics: false, marketing: false }); ckBanner.classList.remove('show'); };
+      document.getElementById('ckCustom').onclick = openCkModal;
+      document.getElementById('ckSave').onclick = () => { saveCk({ necessary: true, analytics: ckAn.checked, marketing: ckMk.checked }); ckModal.classList.remove('show'); ckBanner.classList.remove('show'); };
+      document.getElementById('ckAcceptAll').onclick = () => { saveCk({ necessary: true, analytics: true, marketing: true }); ckModal.classList.remove('show'); ckBanner.classList.remove('show'); };
+      ckModal.onclick = e => { if (e.target === ckModal) ckModal.classList.remove('show'); };
+    </script>
+  </body>
+
+  </html>
+  HTMLEOF
+  echo "supermercado-larreaundi.html OK - $(wc -c < /mnt/user-data/outputs/supermercado-larreaundi.html) bytes"
