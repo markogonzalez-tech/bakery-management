@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#231508">
+    <title>Trabaja con nosotros — Irun Larreaundi</title>
+    <meta name="description"
+        content="Únete al equipo de Irun Larreaundi. Envíanos tu currículum y forma parte de nuestro obrador artesanal en Irun.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <script>function googleTranslateInit() { new google.translate.TranslateElement({ pageLanguage: 'es', includedLanguages: 'en,fr,de,it,pt,eu,ca,zh,ja,ar,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element'); }</script>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --ink: #140C04;
+            --bark: #231508;
+            --bark2: #3A2010;
+            --clay: #6B3A1F;
+            --amber: #C8853A;
+            --gold: #E0A84A;
+            --gold-soft: #F0CC80;
+            --warm: #FAF3E8;
+            --paper: #F5EDD8;
+            --linen: #EAE0CC;
+            --muted: #7A5E40;
+            --wh: #FFFCF5;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--warm);
+            color: var(--ink);
+            overflow-x: hidden
+        }
+
+        .sr {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease
+        }
+
+        .sr.on {
+            opacity: 1;
+            transform: none
+        }
+
+        /* ── GOOGLE TRANSLATE ── */
+        .nav-translate {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 100px;
+            padding: 6px 14px 6px 10px;
+            transition: background .2s;
+            cursor: pointer;
+            flex-shrink: 0
+        }
+
+        .nav-translate:hover {
+            background: rgba(255, 255, 255, .15)
+        }
+
+        .nav-translate-lbl {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .7);
+            white-space: nowrap;
+            user-select: none
+        }
+
+        #google_translate_element {
+            display: inline-block
+        }
+
+        .goog-te-gadget {
+            font-family: 'DM Sans', sans-serif !important;
+            font-size: 0 !important
+        }
+
+        .goog-te-gadget select {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            background: transparent;
+            color: rgba(255, 255, 255, .85);
+            border: 0;
+            padding: 2px 2px;
+            cursor: pointer;
+            outline: none;
+            max-width: 90px
+        }
+
+        .goog-te-gadget select option {
+            background: #231508;
+            color: #fff
+        }
+
+        .goog-logo-link,
+        .goog-te-gadget span {
+            display: none !important
+        }
+
+        /* NAV */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            padding: 0 52px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: rgba(35, 21, 8, .96);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--wh);
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap
+        }
+
+        .logo em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 300
+        }
+
+        .back-btn {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .55);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color .2s;
+            white-space: nowrap
+        }
+
+        .back-btn:hover {
+            color: var(--gold-soft)
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--bark);
+            padding: 80px 52px;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 40%, rgba(200, 133, 58, .1), transparent 65%);
+            pointer-events: none
+        }
+
+        .hero-tag {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--amber);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px
+        }
+
+        .hero-tag::before,
+        .hero-tag::after {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1px;
+            background: var(--amber)
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(40px, 6vw, 72px);
+            color: var(--wh);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 20px
+        }
+
+        .hero h1 em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 300
+        }
+
+        .hero p {
+            font-size: 17px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, .55);
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.85
+        }
+
+        /* POR QUÉ TRABAJAR */
+        .valores {
+            padding: 80px 52px;
+            background: var(--warm)
+        }
+
+        .vals-inner {
+            max-width: 1000px;
+            margin: 0 auto
+        }
+
+        .sec-tag {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--amber);
+            display: block;
+            margin-bottom: 12px
+        }
+
+        .vals-inner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 4vw, 52px);
+            color: var(--bark);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px
+        }
+
+        .vals-inner p {
+            font-size: 16px;
+            color: var(--muted);
+            font-weight: 300;
+            max-width: 500px;
+            line-height: 1.8;
+            margin-bottom: 48px
+        }
+
+        .vals-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--linen)
+        }
+
+        .val {
+            background: var(--warm);
+            padding: 36px 28px;
+            transition: background .3s;
+            position: relative;
+            overflow: hidden
+        }
+
+        .val:hover {
+            background: var(--wh)
+        }
+
+        .val::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--amber), var(--gold));
+            transition: width .4s
+        }
+
+        .val:hover::after {
+            width: 100%
+        }
+
+        .val-ico {
+            font-size: 32px;
+            margin-bottom: 14px
+        }
+
+        .val h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--bark);
+            font-weight: 700;
+            margin-bottom: 8px
+        }
+
+        .val p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.75;
+            font-weight: 300
+        }
+
+        /* FORMULARIO CV */
+        .cv-section {
+            padding: 80px 52px;
+            background: var(--paper)
+        }
+
+        .cv-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .cv-inner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(30px, 4vw, 50px);
+            color: var(--bark);
+            font-weight: 700;
+            margin-bottom: 12px
+        }
+
+        .cv-inner h2 em {
+            color: var(--amber);
+            font-style: italic;
+            font-weight: 300
+        }
+
+        .cv-inner>p {
+            font-size: 16px;
+            color: var(--muted);
+            font-weight: 300;
+            max-width: 480px;
+            margin: 0 auto 40px;
+            line-height: 1.8
+        }
+
+        .form {
+            display: grid;
+            gap: 18px;
+            text-align: left;
+            background: var(--wh);
+            padding: 44px;
+            border: 1px solid rgba(107, 58, 31, .12);
+            border-radius: 10px;
+            box-shadow: 0 16px 56px rgba(107, 58, 31, .08)
+        }
+
+        .form label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--clay);
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block
+        }
+
+        .form input[type=text],
+        .form input[type=email],
+        .form input[type=tel],
+        .form select,
+        .form textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid rgba(107, 58, 31, .18);
+            background: var(--warm);
+            font-family: inherit;
+            font-size: 15px;
+            color: var(--ink);
+            border-radius: 4px;
+            transition: border-color .2s, box-shadow .2s
+        }
+
+        .form input:focus,
+        .form select:focus,
+        .form textarea:focus {
+            outline: none;
+            border-color: var(--amber);
+            box-shadow: 0 0 0 3px rgba(200, 133, 58, .1);
+            background: var(--wh)
+        }
+
+        .form select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A5E40' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px
+        }
+
+        .form textarea {
+            resize: vertical;
+            min-height: 110px
+        }
+
+        .file-wrap {
+            border: 2px dashed rgba(107, 58, 31, .2);
+            border-radius: 6px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+            background: var(--warm)
+        }
+
+        .file-wrap:hover {
+            border-color: var(--amber);
+            background: var(--paper)
+        }
+
+        .file-wrap input[type=file] {
+            display: none
+        }
+
+        .file-wrap label {
+            cursor: pointer;
+            display: block
+        }
+
+        .file-ico {
+            font-size: 32px;
+            margin-bottom: 8px
+        }
+
+        .file-txt {
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 300
+        }
+
+        .file-txt strong {
+            color: var(--clay);
+            font-weight: 600
+        }
+
+        .file-name {
+            font-size: 13px;
+            color: var(--amber);
+            margin-top: 8px;
+            display: none;
+            font-weight: 500
+        }
+
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+            cursor: pointer
+        }
+
+        .form-check input {
+            margin-top: 3px;
+            flex-shrink: 0;
+            accent-color: var(--amber);
+            width: 16px;
+            height: 16px
+        }
+
+        .form-check a {
+            color: var(--clay);
+            text-decoration: underline
+        }
+
+        .form button {
+            margin-top: 6px;
+            justify-self: start;
+            background: var(--bark);
+            color: var(--gold-soft);
+            padding: 15px 36px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 0;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: inherit
+        }
+
+        .form button:hover:not(:disabled) {
+            background: var(--amber);
+            color: var(--bark);
+            transform: translateY(-2px)
+        }
+
+        .form button:disabled {
+            opacity: .6;
+            cursor: wait
+        }
+
+        .form-legal {
+            font-size: 10px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-top: 2px;
+            opacity: .8
+        }
+
+        .form-legal a {
+            color: var(--clay)
+        }
+
+        .form-msg {
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+            margin-top: 4px
+        }
+
+        .form-msg.ok {
+            display: block;
+            background: #E8F5E0;
+            color: #3F6B1F;
+            border: 1px solid #B8D89A;
+            font-weight: 500
+        }
+
+        .form-msg.err {
+            display: block;
+            background: #F8E3DC;
+            color: #8B2E1A;
+            border: 1px solid #E0B5A8
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0C0700;
+            padding: 32px 52px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-top: 1px solid rgba(255, 255, 255, .05)
+        }
+
+        .fl {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, .3)
+        }
+
+        .fl em {
+            color: rgba(224, 168, 74, .45);
+            font-style: italic
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap
+        }
+
+        .footer-legal a {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .25);
+            text-decoration: none;
+            letter-spacing: .5px;
+            transition: color .2s
+        }
+
+        .footer-legal a:hover {
+            color: rgba(255, 255, 255, .5)
+        }
+
+        footer small {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .15)
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:800px) {
+            nav {
+                padding: 0 20px;
+                gap: 12px
+            }
+
+            .nav-translate {
+                padding: 5px 10px 5px 8px
+            }
+
+            .hero {
+                padding: 60px 22px
+            }
+
+            .valores {
+                padding: 56px 22px
+            }
+
+            .vals-grid {
+                grid-template-columns: 1fr
+            }
+
+            .cv-section {
+                padding: 56px 22px
+            }
+
+            .form {
+                padding: 24px 18px
+            }
+
+            .form button {
+                justify-self: stretch;
+                width: 100%
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px 22px
+            }
+        }
+
+        @media(max-width:500px) {
+            .nav-translate-lbl {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Irun <em>Larreaundi</em></a>
+        <div class="nav-right">
+            <div class="nav-translate" title="Traducir página">
+                <span class="nav-translate-lbl">🌐 Traductor</span>
+                <div id="google_translate_element"></div>
+            </div>
+            <a href="index.html" class="back-btn">← Volver</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-tag">Únete al equipo</div>
+        <h1>Trabaja con<br><em>nosotros</em></h1>
+        <p>Buscamos personas con ganas de trabajar en un negocio familiar con mucho futuro. Si te apasiona la panadería,
+            la atención al cliente o la hostelería, este es tu sitio.</p>
+    </section>
+
+    <section class="valores sr">
+        <div class="vals-inner">
+            <span class="sec-tag">Por qué elegirnos</span>
+            <h2>Un buen sitio<br>donde trabajar</h2>
+            <p>Somos un equipo pequeño, cercano y con mucho trabajo. Te tratamos como a uno más desde el primer día.</p>
+            <div class="vals-grid">
+                <div class="val sr">
+                    <div class="val-ico">🤝</div>
+                    <h3>Ambiente familiar</h3>
+                    <p>Equipo pequeño y cercano donde todo el mundo se conoce y se ayuda.</p>
+                </div>
+                <div class="val sr" style="transition-delay:.08s">
+                    <div class="val-ico">📈</div>
+                    <h3>Estabilidad</h3>
+                    <p>Negocio consolidado en Irun con más de una década de trayectoria y proyección de crecimiento.</p>
+                </div>
+                <div class="val sr" style="transition-delay:.16s">
+                    <div class="val-ico">🥖</div>
+                    <h3>Orgullo de lo que hacemos</h3>
+                    <p>Producto artesanal elaborado cada día. Aquí se trabaja con las manos y se nota el resultado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section sr" id="cv">
+        <div class="cv-inner">
+            <span class="sec-tag" style="display:block;margin-bottom:12px">Envíanos tu CV</span>
+            <h2>¿Te <em>animas</em>?</h2>
+            <p>Rellena el formulario y adjunta tu currículum. Te contactaremos si hay una oportunidad que encaje
+                contigo.</p>
+            <form class="form" id="cvForm" novalidate>
+                <div>
+                    <label for="cv-name">Nombre y apellidos</label>
+                    <input id="cv-name" name="nombre" type="text" required autocomplete="name"
+                        placeholder="Tu nombre completo">
+                </div>
+                <div>
+                    <label for="cv-email">Email</label>
+                    <input id="cv-email" name="email" type="email" required autocomplete="email"
+                        placeholder="tu@email.com">
+                </div>
+                <div>
+                    <label for="cv-phone">Teléfono <span
+                            style="opacity:.6;text-transform:none;letter-spacing:0;font-weight:400">(opcional)</span></label>
+                    <input id="cv-phone" name="telefono" type="tel" autocomplete="tel" placeholder="+34 600 000 000">
+                </div>
+                <div>
+                    <label for="cv-puesto">¿A qué puesto te presentas?</label>
+                    <select id="cv-puesto" name="puesto">
+                        <option value="">Selecciona una opción</option>
+                        <option>Panadero / Obrador</option>
+                        <option>Pastelero / Bollería</option>
+                        <option>Dependiente/a de tienda</option>
+                        <option>Repartidor/a</option>
+                        <option>Camarero/a</option>
+                        <option>Otro / Candidatura espontánea</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="cv-mensaje">Mensaje <span
+                            style="opacity:.6;text-transform:none;letter-spacing:0;font-weight:400">(opcional)</span></label>
+                    <textarea id="cv-mensaje" name="mensaje"
+                        placeholder="Cuéntanos algo sobre ti, tu experiencia o por qué quieres trabajar con nosotros..."></textarea>
+                </div>
+                <div>
+                    <label>Currículum (PDF o Word)</label>
+                    <div class="file-wrap" onclick="document.getElementById('cv-file').click()">
+                        <input type="file" id="cv-file" name="cv" accept=".pdf,.doc,.docx"
+                            onchange="showFileName(this)">
+                        <label for="cv-file">
+                            <div class="file-ico">📄</div>
+                            <div class="file-txt"><strong>Haz clic para subir tu CV</strong><br>PDF o Word · Máx. 5 MB
+                            </div>
+                        </label>
+                        <div class="file-name" id="fileName"></div>
+                    </div>
+                </div>
+                <label class="form-check">
+                    <input type="checkbox" name="privacidad" required>
+                    <span>He leído y acepto la <a href="politica-privacidad.html" target="_blank"
+                            rel="noopener">política de privacidad</a>.</span>
+                </label>
+                <button type="submit" id="cvBtn">Enviar candidatura</button>
+                <p class="form-legal">Responsable: Irun Larreaundi · Finalidad: gestionar tu candidatura laboral.
+                    Legitimación: tu consentimiento. Los datos se conservarán durante 1 año. Destinatarios: no se
+                    cederán a terceros. Derechos: acceso, rectificación y supresión escribiendo a <a
+                        href="mailto:veymalarreaundi@gmail.com">veymalarreaundi@gmail.com</a>.</p>
+                <div class="form-msg" id="cvMsg" role="status" aria-live="polite"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="fl">Irun <em>Larreaundi</em></div>
+        <div class="footer-legal">
+            <a href="aviso-legal.html">Aviso legal</a>
+            <a href="politica-privacidad.html">Política de privacidad</a>
+            <a href="politica-cookies.html">Política de cookies</a>
+        </div>
+        <small>© 2026 · Irun, Gipuzkoa</small>
+    </footer>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateInit" defer></script>
+    <script>
+        const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target) } }), { threshold: .08 });
+        document.querySelectorAll('.sr').forEach(el => obs.observe(el));
+
+        function showFileName(input) {
+            const fn = document.getElementById('fileName');
+            if (input.files && input.files[0]) { fn.textContent = '📎 ' + input.files[0].name; fn.style.display = 'block'; }
+            else { fn.style.display = 'none'; }
+        }
+
+        const cvForm = document.getElementById('cvForm');
+        const cvBtn = document.getElementById('cvBtn');
+        const cvMsg = document.getElementById('cvMsg');
+
+        cvForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            cvMsg.className = 'form-msg'; cvMsg.textContent = '';
+            const fd = new FormData(cvForm);
+            const nombre = (fd.get('nombre') || '').toString().trim();
+            const email = (fd.get('email') || '').toString().trim();
+            const privacidad = !!fd.get('privacidad');
+            if (!nombre || !email || !privacidad) {
+                cvMsg.className = 'form-msg err'; cvMsg.textContent = 'Por favor, completa los campos obligatorios y acepta la política de privacidad.'; return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                cvMsg.className = 'form-msg err'; cvMsg.textContent = 'El email no parece válido.'; return;
+            }
+            cvBtn.disabled = true; const orig = cvBtn.textContent; cvBtn.textContent = 'Enviando…';
+
+            // TODO: conectar con N8N o endpoint de email cuando esté disponible
+            await new Promise(r => setTimeout(r, 1500));
+            cvMsg.className = 'form-msg ok'; cvMsg.textContent = '¡Candidatura recibida! Nos pondremos en contacto contigo si hay una oportunidad que encaje. ¡Gracias!';
+            cvForm.querySelectorAll('input,textarea,select').forEach(i => { if (i.type === 'checkbox') i.checked = false; else i.value = ''; });
+            document.getElementById('fileName').style.display = 'none';
+            cvBtn.disabled = false; cvBtn.textContent = orig;
+        });
+    </script>
+</body>
+
+</html>
