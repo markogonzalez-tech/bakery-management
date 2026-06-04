@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1C0F05">
+    <title>Protección de Datos — Irun Larreaundi</title>
+    <meta name="description" content="Política de protección de datos de VEYMA LARREAUNDI, S.L.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --ink: #1C0F05;
+            --bark: #2A1608;
+            --clay: #6B3A1F;
+            --amber: #C8853A;
+            --gold: #E0A84A;
+            --gold-soft: #F0CC80;
+            --cream: #FAF3E8;
+            --paper: #F5EDD8;
+            --linen: #EAE0CC;
+            --muted: #7A5E40;
+            --wh: #FFFCF5
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased
+        }
+
+        a {
+            color: var(--clay);
+            text-decoration: underline
+        }
+
+        a:hover {
+            color: var(--amber)
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            padding: 0 48px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(28, 15, 5, .97);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, .06)
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--wh);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: .3px
+        }
+
+        .logo em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 300
+        }
+
+        .back-btn {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .5);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color .2s
+        }
+
+        .back-btn:hover {
+            color: var(--gold-soft)
+        }
+
+        .hero-legal {
+            background: var(--bark);
+            padding: 64px 48px 52px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero-legal::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 60% 50%, rgba(200, 133, 58, .08), transparent 60%);
+            pointer-events: none
+        }
+
+        .hero-tag {
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 16px;
+            display: block
+        }
+
+        .hero-legal h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 5vw, 62px);
+            color: var(--wh);
+            font-weight: 700;
+            line-height: 1.05
+        }
+
+        .hero-legal h1 em {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 300
+        }
+
+        .hero-legal p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .4);
+            margin-top: 12px;
+            font-weight: 300
+        }
+
+        .content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 72px 48px 96px
+        }
+
+        .content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--bark);
+            font-weight: 700;
+            margin: 44px 0 14px;
+            padding-top: 8px;
+            border-top: 1px solid var(--linen)
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+            border-top: 0
+        }
+
+        .content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--bark);
+            font-weight: 700;
+            margin: 28px 0 10px
+        }
+
+        .content p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.9;
+            margin-bottom: 14px;
+            font-weight: 300
+        }
+
+        .content p strong {
+            color: var(--ink);
+            font-weight: 500
+        }
+
+        .content a {
+            color: var(--clay)
+        }
+
+        .info-box {
+            background: var(--paper);
+            border: 1px solid rgba(107, 58, 31, .12);
+            border-left: 3px solid var(--amber);
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin: 24px 0
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.8
+        }
+
+        .bloque {
+            background: var(--paper);
+            border: 1px solid rgba(107, 58, 31, .1);
+            border-radius: 6px;
+            padding: 28px 32px;
+            margin: 32px 0
+        }
+
+        .bloque-titulo {
+            display: inline-block;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--amber);
+            font-weight: 600;
+            background: var(--bark);
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 20px
+        }
+
+        .bloque h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: var(--bark);
+            font-weight: 700;
+            margin: 20px 0 8px
+        }
+
+        .bloque h3:first-of-type {
+            margin-top: 0
+        }
+
+        .bloque p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.85;
+            margin-bottom: 10px;
+            font-weight: 300
+        }
+
+        .bloque p strong {
+            color: var(--ink);
+            font-weight: 500
+        }
+
+        footer {
+            background: #110900;
+            padding: 40px 48px 28px;
+            border-top: 1px solid rgba(255, 255, 255, .05)
+        }
+
+        .footer-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px
+        }
+
+        .fl {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, .3)
+        }
+
+        .fl em {
+            color: rgba(224, 168, 74, .4);
+            font-style: italic
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap
+        }
+
+        .footer-legal a {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .25);
+            text-decoration: none;
+            letter-spacing: .5px;
+            transition: color .2s
+        }
+
+        .footer-legal a:hover {
+            color: rgba(255, 255, 255, .55)
+        }
+
+        footer small {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .15);
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, .04)
+        }
+
+        @media(max-width:700px) {
+            nav {
+                padding: 0 20px
+            }
+
+            .hero-legal {
+                padding: 48px 22px 40px
+            }
+
+            .content {
+                padding: 48px 22px 72px
+            }
+
+            footer {
+                padding: 32px 22px 22px
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .bloque {
+                padding: 20px 18px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">Irun <em>Larreaundi</em></a>
+        <a href="index.html" class="back-btn">← Volver a la web</a>
+    </nav>
+
+    <div class="hero-legal">
+        <span class="hero-tag">Legal</span>
+        <h1>Protección de <em>datos</em></h1>
+        <p>VEYMA LARREAUNDI, S.L. · CIF B75053165</p>
+    </div>
+
+    <div class="content">
+
+        <p>En esta web, propiedad de <strong>VEYMA LARREAUNDI, S.L.</strong>, aseguramos la total protección de los
+            datos de carácter personal proporcionados por nuestros usuarios.</p>
+        <p>En esta sección ponemos a disposición del interesado la información legal o política de privacidad
+            correspondiente a los distintos tratamientos de datos llevados a cabo por nuestra empresa. En función de
+            cuál sea su relación con nuestra empresa, le será aplicable la correspondiente política de privacidad.</p>
+
+        <div class="info-box">
+            <p>
+                <strong>Responsable del tratamiento:</strong> VEYMA LARREAUNDI, S.L.<br>
+                <strong>CIF:</strong> B75053165<br>
+                <strong>Dirección:</strong> C/ Iñigo de Loyola 2 bajo, 20303 Irun (Gipuzkoa)<br>
+                <strong>Tel:</strong> <a href="tel:+34943005491">943 005 491</a><br>
+                <strong>Email:</strong> <a href="mailto:supermercado@larreaundi.com">supermercado@larreaundi.com</a><br>
+                <strong>Web:</strong> <a href="https://www.larreaundi.com" target="_blank"
+                    rel="noopener">www.larreaundi.com</a>
+                <strong>Inscrita en el Registro Mercantil de Gipuzkoa: </strong> Hoja SS-33900 Tomo 2532 Folio 47.
+
+            </p>
+        </div>
+
+        <!-- CONTACTOS -->
+        <div class="bloque">
+            <span class="bloque-titulo">Contactos</span>
+
+            <h3>¿Quién es el responsable de sus datos?</h3>
+            <p>De acuerdo con lo establecido por el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, le
+                informamos que los datos personales aportados serán tratados por <strong>VEYMA LARREAUNDI, S.L.</strong>
+                con CIF B75053165 y domicilio en C/ Iñigo de Loyola 2 bajo, 20303 Irun (Gipuzkoa).</p>
+
+            <h3>¿Con qué finalidad tratamos sus datos personales?</h3>
+            <p>Los datos aportados por usted son necesarios para poder prestarle con todas las garantías el servicio
+                solicitado, y serán tratados con las siguientes finalidades: Gestión de los datos de contacto para la
+                comunicación, prospección comercial y envío de publicidad.</p>
+
+            <h3>¿Por cuánto tiempo conservaremos sus datos?</h3>
+            <p>Los datos personales proporcionados se conservarán mientras se prevea que pueden ser necesarios para
+                contactar con el interesado.</p>
+
+            <h3>¿Cuál es la legitimación para el tratamiento de sus datos?</h3>
+            <p>La base legal para el tratamiento de sus datos es el consentimiento del interesado al proporcionar sus
+                datos de contacto.</p>
+
+            <h3>¿A qué destinatarios se comunicarán sus datos?</h3>
+            <p>Sus datos no se cederán a terceros salvo obligación legal.</p>
+
+            <h3>¿Cuáles son sus derechos cuando nos facilita sus datos?</h3>
+            <p>Cualquier persona tiene derecho a solicitar el acceso, rectificación, supresión, limitación del
+                tratamiento, oposición o derecho a la portabilidad de sus datos personales, escribiéndonos a la
+                dirección de nuestras oficinas, o enviando un correo electrónico a <a
+                    href="mailto:supermercado@larreaundi.com">supermercado@larreaundi.com</a>, indicando el derecho que
+                desea ejercer.</p>
+            <p>Tendrá derecho igualmente a retirar el consentimiento prestado en cualquier momento. La retirada del
+                consentimiento no afectará a la licitud del tratamiento efectuado antes de la retirada de dicho
+                consentimiento.</p>
+            <p>Tiene derecho a presentar una reclamación ante la autoridad de control si considera que pueden haber sido
+                vulnerados sus derechos en lo concerniente a la protección de sus datos personales.</p>
+        </div>
+
+        <!-- CLIENTES -->
+        <div class="bloque">
+            <span class="bloque-titulo">Clientes</span>
+
+            <h3>¿Quién es el responsable de sus datos?</h3>
+            <p>De acuerdo con lo establecido por el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, le
+                informamos que los datos personales aportados serán tratados por <strong>VEYMA LARREAUNDI, S.L.</strong>
+                con CIF B75053165 y domicilio en C/ Iñigo de Loyola 2 bajo, 20303 Irun (Gipuzkoa).</p>
+
+            <h3>¿Con qué finalidad tratamos sus datos personales?</h3>
+            <p>Los datos aportados por usted son necesarios para poder prestarle con todas las garantías el servicio
+                solicitado, y serán tratados con las siguientes finalidades: Gestión administrativa, contable y fiscal,
+                gestión de las relaciones comerciales y transacciones económicas, acciones de marketing y publicidad en
+                general.</p>
+
+            <h3>¿Por cuánto tiempo conservaremos sus datos?</h3>
+            <p>Los datos personales proporcionados se conservarán hasta la finalización de la relación contractual y,
+                posteriormente, durante los plazos legalmente exigidos.</p>
+
+            <h3>¿Cuál es la legitimación para el tratamiento de sus datos?</h3>
+            <p>La base legal para el tratamiento de sus datos es la ejecución del contrato suscrito con nosotros.</p>
+
+            <h3>¿A qué destinatarios se comunicarán sus datos?</h3>
+            <p>Para cumplir con la finalidad prevista, sus datos podrán ser comunicados a: Administración tributaria;
+                Bancos, cajas de ahorros y cajas rurales; Administración pública con competencia en la materia.</p>
+
+            <h3>¿Cuáles son sus derechos cuando nos facilita sus datos?</h3>
+            <p>Cualquier persona tiene derecho a solicitar el acceso, rectificación, supresión, limitación del
+                tratamiento, oposición o derecho a la portabilidad de sus datos personales, escribiéndonos a la
+                dirección de nuestras oficinas, o enviando un correo electrónico a <a
+                    href="mailto:supermercado@larreaundi.com">supermercado@larreaundi.com</a>, indicando el derecho que
+                desea ejercer.</p>
+            <p>Tendrá derecho igualmente a retirar el consentimiento prestado en cualquier momento. La retirada del
+                consentimiento no afectará a la licitud del tratamiento efectuado antes de la retirada de dicho
+                consentimiento.</p>
+            <p>Tiene derecho a presentar una reclamación ante la autoridad de control si considera que pueden haber sido
+                vulnerados sus derechos en lo concerniente a la protección de sus datos personales.</p>
+        </div>
+
+        <!-- CANDIDATOS -->
+        <div class="bloque">
+            <span class="bloque-titulo">Candidatos</span>
+
+            <h3>¿Quién es el responsable de sus datos?</h3>
+            <p>De acuerdo con lo establecido por la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos
+                Personales y garantía de los derechos digitales (LOPD) y el Reglamento General de Protección de Datos
+                (RGPD) de 27 de Abril de 2016, le informamos que los datos personales aportados serán tratados por
+                <strong>VEYMA LARREAUNDI, S.L.</strong> con CIF B75053165 y domicilio en C/ Iñigo de Loyola 4 bajo,
+                20303 Irún (Gipuzkoa).</p>
+
+            <h3>¿Con qué finalidad tratamos sus datos personales?</h3>
+            <p>Los datos aportados por usted serán tratados con las siguientes finalidades: participación en procesos de
+                selección para un puesto de trabajo en la empresa.</p>
+
+            <h3>¿Por cuánto tiempo conservaremos sus datos?</h3>
+            <p>Los datos personales proporcionados se conservarán mientras se prevea que pueden ser necesarios para
+                contactar con el interesado.</p>
+
+            <h3>¿Cuál es la legitimación para el tratamiento de sus datos?</h3>
+            <p>La base legal para el tratamiento de sus datos es el consentimiento del interesado al proporcionar sus
+                datos.</p>
+
+            <h3>¿A qué destinatarios se comunicarán sus datos?</h3>
+            <p>Sus datos no se cederán a terceros salvo obligación legal.</p>
+
+            <h3>¿Cuáles son sus derechos cuando nos facilita sus datos?</h3>
+            <p>Cualquier persona tiene derecho a solicitar el acceso, rectificación, supresión, limitación del
+                tratamiento, oposición o derecho a la portabilidad de sus datos personales, escribiéndonos a la
+                dirección de nuestras oficinas, o enviando un correo electrónico a <a
+                    href="mailto:veymalarreaundi@gmail.com">veymalarreaundi@gmail.com</a>, indicando el derecho que
+                desea ejercer.</p>
+            <p>Tendrá derecho igualmente a retirar el consentimiento prestado en cualquier momento. Tiene derecho a
+                presentar una reclamación ante la autoridad de control si considera que pueden haber sido vulnerados sus
+                derechos en lo concerniente a la protección de sus datos personales.</p>
+        </div>
+
+        <!-- PARTICIPANTES EN SORTEOS -->
+        <div class="bloque">
+            <span class="bloque-titulo">Participantes en sorteos</span>
+
+            <h3>¿Quién es el responsable de sus datos?</h3>
+            <p>De acuerdo con lo establecido por la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos
+                Personales y garantía de los derechos digitales (LOPD) y el Reglamento General de Protección de Datos
+                (RGPD) de 27 de Abril de 2016, le informamos que los datos personales aportados serán tratados por
+                <strong>VEYMA LARREAUNDI, S.L.</strong> con CIF B75053165 y domicilio en C/ Iñigo de Loyola 4 bajo,
+                20303 Irún (Gipuzkoa).</p>
+
+            <h3>¿Con qué finalidad tratamos sus datos personales?</h3>
+            <p>Los datos aportados por usted serán tratados con las siguientes finalidades: Gestión de los datos para la
+                participación en sorteos, posible publicación de datos y/o imágenes en página web o redes sociales del
+                comercio o de empresas del grupo.</p>
+
+            <h3>¿Por cuánto tiempo conservaremos sus datos?</h3>
+            <p>Los datos personales proporcionados se conservarán mientras se prevea que pueden ser necesarios.</p>
+
+            <h3>¿Cuál es la legitimación para el tratamiento de sus datos?</h3>
+            <p>La base legal para el tratamiento de sus datos es el consentimiento del interesado.</p>
+
+            <h3>¿A qué destinatarios se comunicarán sus datos?</h3>
+            <p>Para cumplir con la finalidad prevista, sus datos podrán ser comunicados a: Empresas del grupo y redes
+                sociales.</p>
+
+            <h3>¿Cuáles son sus derechos cuando nos facilita sus datos?</h3>
+            <p>Cualquier persona tiene derecho a solicitar el acceso, rectificación, supresión, limitación del
+                tratamiento, oposición o derecho a la portabilidad de sus datos personales, escribiéndonos a la
+                dirección de nuestras oficinas, o enviando un correo electrónico a <a
+                    href="mailto:supermercado@larreaundi.com">supermercado@larreaundi.com</a>, indicando el derecho que
+                desea ejercer.</p>
+            <p>Tendrá derecho igualmente a retirar el consentimiento prestado en cualquier momento. La retirada del
+                consentimiento no afectará a la licitud del tratamiento efectuado antes de la retirada de dicho
+                consentimiento. Tiene derecho a presentar una reclamación ante la autoridad de control si considera que
+                pueden haber sido vulnerados sus derechos en lo concerniente a la protección de sus datos personales.
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="fl">Irun <em>Larreaundi</em></div>
+            <div class="footer-legal">
+                <a href="aviso-legal.html">Aviso legal</a>
+                <a href="proteccion-de-datos.html">Protección de datos</a>
+                <a href="politica-cookies.html">Política de cookies</a>
+            </div>
+        </div>
+        <small>© 2026 VEYMA LARREAUNDI, S.L. · Todos los derechos reservados</small>
+    </footer>
+</body>
+
+</html>
